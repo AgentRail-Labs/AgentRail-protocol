@@ -18,7 +18,7 @@ import {
   Fingerprint,
 } from 'lucide-react';
 
-const GITHUB_URL = 'https://github.com/clevercon-protocol/clevercon';
+const GITHUB_URL = 'https://github.com/agentrail-protocol-protocol/agentrail-protocol';
 
 /** Fade-and-rise on scroll into view. */
 function Reveal({
@@ -60,7 +60,7 @@ function Logo() {
       <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-violet-500 to-indigo-700 flex items-center justify-center shadow-lg shadow-violet-900/40">
         <Layers size={16} className="text-white" />
       </div>
-      <span className="text-[15px] font-bold tracking-tight text-white">CleverCon</span>
+      <span className="text-[15px] font-bold tracking-tight text-white">AgentRailProtocol</span>
     </div>
   );
 }
@@ -378,7 +378,7 @@ export function Landing() {
           </Reveal>
           <Reveal delay={160}>
             <p className="mt-6 text-base sm:text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed">
-              CleverCon gives an AI agent a budget it cannot overspend, enforced on-chain and kept
+              AgentRailProtocol gives an AI agent a budget it cannot overspend, enforced on-chain and kept
               private. Fund a non-custodial vault, set your rules, and your agent pays, disburses,
               and hires within them, over MCP or the SDK. You stay in control the whole time.
             </p>
@@ -450,7 +450,7 @@ export function Landing() {
         <div className="max-w-6xl mx-auto">
           <Reveal className="text-center max-w-2xl mx-auto">
             <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight text-balance">
-              Everything CleverCon offers
+              Everything AgentRailProtocol offers
             </h2>
             <p className="mt-3 text-slate-400">
               The vault, policies, SDK, and MCP server are live on testnet today. The full
@@ -606,7 +606,7 @@ export function Landing() {
             </h2>
             <p className="mt-4 text-slate-400 leading-relaxed">
               Most agent-payment tools put your budget, your approved payees, and your limits on a
-              public ledger for anyone to read. CleverCon is built so the contract enforces your
+              public ledger for anyone to read. AgentRailProtocol is built so the contract enforces your
               spending policy and proves it was followed, without revealing the policy. That is what
               separates it from transparent, custodial, or SDK-only alternatives.
             </p>
@@ -623,7 +623,7 @@ export function Landing() {
               Concretely: a trading firm funds an agent to buy research data and sets rules, only
               five approved providers, at most $100 a purchase, $500 a week. Without privacy, rivals
               read its budget, its providers (its edge), and when it ramps up before a trade. With
-              CleverCon, the chain shows only that a payment was allowed. Try it:
+              AgentRailProtocol, the chain shows only that a payment was allowed. Try it:
             </p>
           </Reveal>
         </div>

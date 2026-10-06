@@ -9,7 +9,7 @@ let kitPromise: Promise<StellarWalletsKit> | null = null;
 // page refresh, when the session is restored but the kit is a fresh instance, we
 // can re-select the wallet before signing (otherwise the kit throws
 // "Please set the wallet first").
-const WALLET_ID_KEY = 'clevercon.walletId';
+const WALLET_ID_KEY = 'agentrail-protocol.walletId';
 
 function getKit(): Promise<StellarWalletsKit> {
   if (!kitPromise) {

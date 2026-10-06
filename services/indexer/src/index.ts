@@ -2,7 +2,7 @@ import { config as loadDotenv } from 'dotenv';
 import { fileURLToPath } from 'node:url';
 import { dirname, resolve } from 'node:path';
 import { rpc as SorobanRpc } from '@stellar/stellar-sdk';
-import { PrismaClient } from '@clevercon/db';
+import { PrismaClient } from '@agentrail-protocol/db';
 import { loadConfig } from './config.js';
 
 // Load the repo-root .env so the indexer picks up DATABASE_URL, the RPC URL, and

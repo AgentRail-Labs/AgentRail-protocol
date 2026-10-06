@@ -23,6 +23,6 @@ export const useSession = create<SessionState>()(
       setSession: (session) => set({ session }),
       clear: () => set({ session: null }),
     }),
-    { name: 'clevercon.session' },
+    { name: 'agentrail-protocol.session' },
   ),
 );

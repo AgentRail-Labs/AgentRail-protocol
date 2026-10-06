@@ -1,4 +1,4 @@
-# @clevercon/db
+# @agentrail-protocol/db
 
 Prisma schema + shared client for the new stack (`services/api`, `services/indexer`,
 `services/workers`). Postgres is the queryable, reconciled **mirror** of on-chain
@@ -35,7 +35,7 @@ npm run db:push && npm run db:seed`. A unix-socket URL with a dedicated schema
 works without creating a database, e.g.:
 
 ```
-DATABASE_URL=postgresql://<user>@localhost/<db>?host=/var/run/postgresql&schema=clevercon
+DATABASE_URL=postgresql://<user>@localhost/<db>?host=/var/run/postgresql&schema=agentrail-protocol
 ```
 
 The package builds to `dist` (consumed by services at runtime); `postinstall`

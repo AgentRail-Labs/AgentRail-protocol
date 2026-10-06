@@ -1,12 +1,12 @@
 import { createHmac } from 'node:crypto';
-import { type PrismaClient } from '@clevercon/db';
+import { type PrismaClient } from '@agentrail-protocol/db';
 import { logger } from './logger.js';
 
 const DELIVERY_TIMEOUT_MS = 8000;
 
 /**
  * Deliver an event to a user's registered webhooks (best-effort). Each delivery
- * is a POST with the JSON payload and an `x-clevercon-signature` header =
+ * is a POST with the JSON payload and an `x-agentrail-protocol-signature` header =
  * HMAC-SHA256(body) keyed by the webhook secret, so the receiver can verify it
  * came from us. A webhook subscribes to specific events, or to all if its events
  * list is empty. Failures are logged and swallowed; they never affect the job.
@@ -35,8 +35,8 @@ export async function deliverWebhooks(
           method: 'POST',
           headers: {
             'content-type': 'application/json',
-            'x-clevercon-event': event,
-            'x-clevercon-signature': signature,
+            'x-agentrail-protocol-event': event,
+            'x-agentrail-protocol-signature': signature,
           },
           body,
           signal: AbortSignal.timeout(DELIVERY_TIMEOUT_MS),

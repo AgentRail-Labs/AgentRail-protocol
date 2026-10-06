@@ -1,6 +1,6 @@
-# Contributing to CleverCon
+# Contributing to AgentRailProtocol
 
-Thanks for your interest in contributing to CleverCon, a way to delegate a
+Thanks for your interest in contributing to AgentRailProtocol, a way to delegate a
 budget to AI agents on Stellar with funds held in a non-custodial vault. This
 guide covers how to set up the project, the workflow we use, and what we look
 for in a pull request.
@@ -24,7 +24,7 @@ for in a pull request.
 ## Project structure
 
 ```
-clevercon/
+agentrail-protocol/
 ├── contracts/             # Soroban smart contracts (Rust)
 │   ├── agent-vault/        # CleverVault: non-custodial treasury + proof-gated release
 │   ├── policy-verifier/    # on-chain verify_policy (private spending policies)
@@ -60,8 +60,8 @@ and [ROADMAP.md](ROADMAP.md) for where the project is headed.
 ### Install and configure
 
 ```bash
-git clone https://github.com/clevercon-protocol/clevercon.git
-cd clevercon
+git clone https://github.com/agentrail-protocol-protocol/agentrail-protocol.git
+cd agentrail-protocol
 npm install
 cp .env.example .env
 ```
@@ -70,7 +70,7 @@ Start Postgres and Redis, then set up the database:
 
 ```bash
 docker compose up -d postgres redis
-npm run -w @clevercon/db generate && npm run -w @clevercon/db push
+npm run -w @agentrail-protocol/db generate && npm run -w @agentrail-protocol/db push
 ```
 
 Set up the faucet/orchestrator wallet used to fund testnet flows:
@@ -86,10 +86,10 @@ npx tsx scripts/fund-testnet-usdc.ts    # swap XLM to USDC via the testnet DEX
 Run each service in its own terminal:
 
 ```bash
-npm run dev -w @clevercon/api        # API on :4100
-npm run dev -w @clevercon/workers    # execution, proofs, settlement
-npm run dev -w @clevercon/indexer    # on-chain event ingestion
-npm run dev -w @clevercon/web        # dApp on :5173
+npm run dev -w @agentrail-protocol/api        # API on :4100
+npm run dev -w @agentrail-protocol/workers    # execution, proofs, settlement
+npm run dev -w @agentrail-protocol/indexer    # on-chain event ingestion
+npm run dev -w @agentrail-protocol/web        # dApp on :5173
 ```
 
 The whole money loop can be exercised headlessly with `npx tsx scripts/e2e-testnet.ts`

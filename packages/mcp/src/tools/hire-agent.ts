@@ -1,7 +1,7 @@
 /**
  * hire_agent MCP tool
  *
- * Creates a task on CleverCon (hires a service) via the API, authenticated with
+ * Creates a task on AgentRailProtocol (hires a service) via the API, authenticated with
  * the caller's API key. This is what lets an agent actually spend on the rail.
  */
 
@@ -16,7 +16,7 @@ import {
 export const hireAgentSchema = {
   name: 'hire_agent',
   description:
-    'Create a task on CleverCon (hire a service). DIRECT pays a chosen serviceId; SEARCH finds and pays one service; COMPOSE runs a multi-service job. Requires an API key.',
+    'Create a task on AgentRailProtocol (hire a service). DIRECT pays a chosen serviceId; SEARCH finds and pays one service; COMPOSE runs a multi-service job. Requires an API key.',
   inputSchema: {
     type: 'object',
     properties: {

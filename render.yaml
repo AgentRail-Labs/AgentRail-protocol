@@ -1,4 +1,4 @@
-# CleverCon — Render deployment blueprint
+# AgentRailProtocol — Render deployment blueprint
 # https://render.com/docs/blueprint-spec
 #
 # Deploy all 7 services from one GitHub repo.
@@ -9,7 +9,7 @@ services:
 
   # ── Registry ────────────────────────────────────────────────────────────────
   - type: web
-    name: clevercon-registry
+    name: agentrail-protocol-registry
     runtime: node
     plan: free
     buildCommand: npm install --include=dev && npm run build:registry
@@ -20,7 +20,7 @@ services:
 
   # ── Orchestrator (also serves the dashboard SPA) ────────────────────────────
   - type: web
-    name: clevercon-orchestrator
+    name: agentrail-protocol-orchestrator
     runtime: node
     plan: free
     buildCommand: npm install --include=dev && npm run build:dashboard && npm run build:orchestrator
@@ -29,7 +29,7 @@ services:
       - key: NODE_ENV
         value: production
       - key: REGISTRY_URL
-        value: https://clevercon-registry.onrender.com   # ← update after registry is live
+        value: https://agentrail-protocol-registry.onrender.com   # ← update after registry is live
       - key: AGENT_VAULT_CONTRACT_ID
         sync: false   # set in Render dashboard
       - key: ORCHESTRATOR_SECRET_KEY
@@ -43,7 +43,7 @@ services:
 
   # ── Stellar Oracle ───────────────────────────────────────────────────────────
   - type: web
-    name: clevercon-stellar-oracle
+    name: agentrail-protocol-stellar-oracle
     runtime: node
     plan: free
     buildCommand: npm install --include=dev && npm run build:oracle
@@ -52,9 +52,9 @@ services:
       - key: NODE_ENV
         value: production
       - key: REGISTRY_URL
-        value: https://clevercon-registry.onrender.com   # ← update after registry is live
+        value: https://agentrail-protocol-registry.onrender.com   # ← update after registry is live
       - key: STELLAR_ORACLE_SELF_URL
-        value: https://clevercon-stellar-oracle.onrender.com   # ← update after this service is live
+        value: https://agentrail-protocol-stellar-oracle.onrender.com   # ← update after this service is live
       - key: STELLAR_ORACLE_SECRET_KEY
         sync: false
       - key: STELLAR_NETWORK
@@ -64,7 +64,7 @@ services:
 
   # ── Web Intelligence v1 ──────────────────────────────────────────────────────
   - type: web
-    name: clevercon-web-intel
+    name: agentrail-protocol-web-intel
     runtime: node
     plan: free
     buildCommand: npm install --include=dev && npm run build:webintel
@@ -73,9 +73,9 @@ services:
       - key: NODE_ENV
         value: production
       - key: REGISTRY_URL
-        value: https://clevercon-registry.onrender.com
+        value: https://agentrail-protocol-registry.onrender.com
       - key: WEB_INTEL_SELF_URL
-        value: https://clevercon-web-intel.onrender.com
+        value: https://agentrail-protocol-web-intel.onrender.com
       - key: WEB_INTEL_SECRET_KEY
         sync: false
       - key: ANTHROPIC_API_KEY
@@ -87,7 +87,7 @@ services:
 
   # ── Web Intelligence v2 ──────────────────────────────────────────────────────
   - type: web
-    name: clevercon-web-intel-v2
+    name: agentrail-protocol-web-intel-v2
     runtime: node
     plan: free
     buildCommand: npm install --include=dev && npm run build:webintel2
@@ -96,9 +96,9 @@ services:
       - key: NODE_ENV
         value: production
       - key: REGISTRY_URL
-        value: https://clevercon-registry.onrender.com
+        value: https://agentrail-protocol-registry.onrender.com
       - key: WEB_INTEL_V2_SELF_URL
-        value: https://clevercon-web-intel-v2.onrender.com
+        value: https://agentrail-protocol-web-intel-v2.onrender.com
       - key: WEB_INTEL_V2_SECRET_KEY
         sync: false
       - key: ANTHROPIC_API_KEY
@@ -110,7 +110,7 @@ services:
 
   # ── Analysis Agent ───────────────────────────────────────────────────────────
   - type: web
-    name: clevercon-analysis
+    name: agentrail-protocol-analysis
     runtime: node
     plan: free
     buildCommand: npm install --include=dev && npm run build:analysis
@@ -119,9 +119,9 @@ services:
       - key: NODE_ENV
         value: production
       - key: REGISTRY_URL
-        value: https://clevercon-registry.onrender.com
+        value: https://agentrail-protocol-registry.onrender.com
       - key: ANALYSIS_AGENT_SELF_URL
-        value: https://clevercon-analysis.onrender.com
+        value: https://agentrail-protocol-analysis.onrender.com
       - key: ANALYSIS_AGENT_SECRET_KEY
         sync: false
       - key: ANTHROPIC_API_KEY
@@ -131,7 +131,7 @@ services:
 
   # ── Reporter Agent ───────────────────────────────────────────────────────────
   - type: web
-    name: clevercon-reporter
+    name: agentrail-protocol-reporter
     runtime: node
     plan: free
     buildCommand: npm install --include=dev && npm run build:reporter
@@ -140,9 +140,9 @@ services:
       - key: NODE_ENV
         value: production
       - key: REGISTRY_URL
-        value: https://clevercon-registry.onrender.com
+        value: https://agentrail-protocol-registry.onrender.com
       - key: REPORT_AGENT_SELF_URL
-        value: https://clevercon-reporter.onrender.com
+        value: https://agentrail-protocol-reporter.onrender.com
       - key: REPORT_AGENT_SECRET_KEY
         sync: false
       - key: ANTHROPIC_API_KEY

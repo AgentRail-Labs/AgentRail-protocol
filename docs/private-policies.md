@@ -342,7 +342,7 @@ testnet, not just in unit tests:
 - **policy-verifier** deployed at `CBILHCY4FEYU7RMWBHJX42QJ5TILHZ33HNOD7A6FXTXKB7X57N4LZQ2D`
   (admin set, VK installed: circuit_size 16384, 4 public inputs, offset 1).
 - A binding proof produced by the TypeScript prover
-  (`@clevercon/common` `buildBindingProof`) was **accepted** by the deployed
+  (`@agentrail-protocol/common` `buildBindingProof`) was **accepted** by the deployed
   contract: `verify_policy -> true`. A mismatched release (wrong amount)
   returned `false`. This is the authoritative cross-language check that the
   off-chain prover and the on-chain verifier agree byte for byte.

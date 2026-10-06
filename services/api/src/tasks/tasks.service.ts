@@ -5,7 +5,7 @@ import {
   NotFoundException,
   Optional,
 } from '@nestjs/common';
-import { Prisma, PaymentStatus, StepStatus, TaskMode, TaskStatus } from '@clevercon/db';
+import { Prisma, PaymentStatus, StepStatus, TaskMode, TaskStatus } from '@agentrail-protocol/db';
 import { PrismaService } from '../prisma/prisma.service.js';
 import { QueueService } from '../queue/queue.service.js';
 import { VaultContractService } from '../vault/vault-contract.service.js';

@@ -13,7 +13,7 @@ export interface Logger {
 export type PaymentModel = 'x402' | 'mpp';
 
 /** What the registry stores and the SDK POSTs to `/register`. Mirrors
- *  `AgentManifest` in `@clevercon/common` — kept as a local alias so the SDK
+ *  `AgentManifest` in `@agentrail-protocol/common` — kept as a local alias so the SDK
  *  does not force a common import on consumers who only want the types. */
 export interface RegistrationPayload {
   agent_id: string;
@@ -117,7 +117,7 @@ export interface AgentConfig {
   facilitatorUrl?: string;
   /** MPP Soroban RPC URL. */
   rpcUrl?: string;
-  /** MPP realm, default `clevercon-<agent_id>`. */
+  /** MPP realm, default `agentrail-protocol-<agent_id>`. */
   realm?: string;
 
   cors?: boolean;

@@ -1,4 +1,4 @@
-// CleverCon data model.
+// AgentRailProtocol data model.
 //
 // Postgres is the queryable, reconciled MIRROR of on-chain state; the chain
 // (CleverVault / policy-verifier / registry) remains the source of truth for

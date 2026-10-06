@@ -1,12 +1,12 @@
 /**
- * Minimal CleverCon API client for the hire-flow MCP tools. Talks to the same
+ * Minimal AgentRailProtocol API client for the hire-flow MCP tools. Talks to the same
  * public HTTP API the console and SDKs use, authenticating with an x-api-key so
  * an agent framework drives the rail exactly as a developer would. Kept as pure
  * functions over an injectable fetch so it is testable without a network.
  */
 
 export interface ApiConfig {
-  /** Base URL of the CleverCon API (no trailing slash needed). */
+  /** Base URL of the AgentRailProtocol API (no trailing slash needed). */
   api_url: string;
   /** Scoped API key (cc_...); required for task actions. */
   api_key?: string;
@@ -47,7 +47,7 @@ async function toApiError(res: Response): Promise<ApiError> {
   } catch {
     detail = await res.text().catch(() => '');
   }
-  if (res.status === 401) return new ApiError(401, 'Unauthorized: check CLEVERCON_API_KEY');
+  if (res.status === 401) return new ApiError(401, 'Unauthorized: check AGENTRAIL_PROTOCOL_API_KEY');
   if (res.status === 429)
     return new ApiError(429, `Daily API quota exceeded${detail ? `: ${detail}` : ''}`);
   return new ApiError(res.status, detail || `HTTP ${res.status}`);
@@ -96,7 +96,7 @@ export function toolJson(data: unknown): ToolResult {
 export function toolError(context: string, err: unknown): ToolResult {
   const message =
     err instanceof ApiError
-      ? `CleverCon API error (${err.status}): ${err.message}`
+      ? `AgentRailProtocol API error (${err.status}): ${err.message}`
       : err instanceof Error
         ? err.message
         : String(err);

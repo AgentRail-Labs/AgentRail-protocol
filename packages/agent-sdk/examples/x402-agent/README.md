@@ -1,11 +1,11 @@
 # x402 agent-key mode
 
-An autonomous agent that funds itself from a CleverCon vault and pays external
+An autonomous agent that funds itself from a AgentRailProtocol vault and pays external
 [x402](https://x402.org) services with those funds. It shows how the two
 non-custodial halves of an agent economy compose:
 
 - **Governed top-up.** The agent calls `wallet.topUp(amount)`, which pulls USDC
-  from the owner's CleverCon vault into the agent's own wallet. The release is
+  from the owner's AgentRailProtocol vault into the agent's own wallet. The release is
   enforced on-chain by the owner's spending policy: the agent can never pull more
   than the ceiling the human set.
 - **Autonomous spend.** The agent calls `wallet.fetch(url)` to hit any x402
@@ -17,10 +17,10 @@ USDC (the Stellar testnet USDC the vault dispenses is exactly the asset the x402
 exact-scheme settles in), so there is no swap between them.
 
 ```ts
-import { createAgentWallet } from '@clevercon/agent-sdk';
+import { createAgentWallet } from '@agentrail-protocol/agent-sdk';
 
 const wallet = createAgentWallet({
-  apiKey: process.env.CLEVERCON_API_KEY!,   // scoped key from the vault owner
+  apiKey: process.env.AGENTRAIL_PROTOCOL_API_KEY!,   // scoped key from the vault owner
   secretKey: process.env.AGENT_SECRET_KEY!, // the agent's OWN Stellar key
 });
 
@@ -38,7 +38,7 @@ vault release can land and the x402 payment can be signed). Point it at any x402
 service (you can stand one up with `createAgent`; see the SDK README).
 
 ```bash
-CLEVERCON_API_KEY=cc_...  \
+AGENTRAIL_PROTOCOL_API_KEY=cc_...  \
 AGENT_SECRET_KEY=S...      \
 ORACLE_URL=http://localhost:4001/query \
 npx tsx examples/x402-agent/agent.ts

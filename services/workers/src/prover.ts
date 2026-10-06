@@ -1,5 +1,5 @@
-import { type PrismaClient, ProofStatus } from '@clevercon/db';
-import { buildBindingProof, verifyBindingProofLocally, generateNullifier } from '@clevercon/common';
+import { type PrismaClient, ProofStatus } from '@agentrail-protocol/db';
+import { buildBindingProof, verifyBindingProofLocally, generateNullifier } from '@agentrail-protocol/common';
 
 export interface GenerateProofResult {
   status: 'ready' | 'failed' | 'skipped';

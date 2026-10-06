@@ -1,4 +1,4 @@
-# Local-first infrastructure for CleverCon development.
+# Local-first infrastructure for AgentRailProtocol development.
 # Brings up the stateful dependencies (Postgres + Redis) that the API, indexer,
 # and workers use. Free to run locally; contracts live on Stellar testnet.
 #
@@ -11,31 +11,31 @@
 services:
   postgres:
     image: postgres:16-alpine
-    container_name: clevercon-postgres
+    container_name: agentrail-protocol-postgres
     restart: unless-stopped
     environment:
-      POSTGRES_USER: ${POSTGRES_USER:-clevercon}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-clevercon}
-      POSTGRES_DB: ${POSTGRES_DB:-clevercon}
+      POSTGRES_USER: ${POSTGRES_USER:-agentrail-protocol}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-agentrail-protocol}
+      POSTGRES_DB: ${POSTGRES_DB:-agentrail-protocol}
     ports:
       - '${POSTGRES_PORT:-5432}:5432'
     volumes:
-      - clevercon_pgdata:/var/lib/postgresql/data
+      - agentrail-protocol_pgdata:/var/lib/postgresql/data
     healthcheck:
-      test: ['CMD-SHELL', 'pg_isready -U ${POSTGRES_USER:-clevercon} -d ${POSTGRES_DB:-clevercon}']
+      test: ['CMD-SHELL', 'pg_isready -U ${POSTGRES_USER:-agentrail-protocol} -d ${POSTGRES_DB:-agentrail-protocol}']
       interval: 5s
       timeout: 5s
       retries: 10
 
   redis:
     image: redis:7-alpine
-    container_name: clevercon-redis
+    container_name: agentrail-protocol-redis
     restart: unless-stopped
     command: ['redis-server', '--appendonly', 'yes']
     ports:
       - '${REDIS_PORT:-6379}:6379'
     volumes:
-      - clevercon_redisdata:/data
+      - agentrail-protocol_redisdata:/data
     healthcheck:
       test: ['CMD', 'redis-cli', 'ping']
       interval: 5s
@@ -43,5 +43,5 @@ services:
       retries: 10
 
 volumes:
-  clevercon_pgdata:
-  clevercon_redisdata:
+  agentrail-protocol_pgdata:
+  agentrail-protocol_redisdata:

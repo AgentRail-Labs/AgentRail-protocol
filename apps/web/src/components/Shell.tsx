@@ -60,7 +60,7 @@ function Brand({ compact = false }: { compact?: boolean }) {
         <Layers size={16} className="text-white" />
       </div>
       {!compact && (
-        <span className="text-[15px] font-bold tracking-tight text-white">CleverCon</span>
+        <span className="text-[15px] font-bold tracking-tight text-white">AgentRailProtocol</span>
       )}
     </Link>
   );

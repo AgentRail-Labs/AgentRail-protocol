@@ -4,7 +4,7 @@ import { dirname, resolve } from 'node:path';
 import { Worker } from 'bullmq';
 import { Emitter } from '@socket.io/redis-emitter';
 import { Redis } from 'ioredis';
-import { PrismaClient } from '@clevercon/db';
+import { PrismaClient } from '@agentrail-protocol/db';
 import {
   TASK_QUEUE,
   PROOF_QUEUE,

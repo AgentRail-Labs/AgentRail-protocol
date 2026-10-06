@@ -7,7 +7,7 @@ import {
   UnauthorizedException,
 } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
-import type { Role } from '@clevercon/db';
+import type { Role } from '@agentrail-protocol/db';
 import { PrismaService } from '../prisma/prisma.service.js';
 import { ApiKeyService } from '../api-keys/api-key.service.js';
 import type { HttpRequest } from './types.js';

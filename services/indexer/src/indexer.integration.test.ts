@@ -26,7 +26,7 @@ function ev(cursor: string, type = 'deposit'): NormalizedEvent {
 describe.skipIf(!DB)('Indexer (integration, real Postgres)', () => {
   beforeAll(async () => {
     process.env.DATABASE_URL = DB;
-    const { PrismaClient } = await import('@clevercon/db');
+    const { PrismaClient } = await import('@agentrail-protocol/db');
     prisma = new PrismaClient();
     await prisma.$connect();
     const { Indexer } = await import('./indexer.js');

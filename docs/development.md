@@ -1,6 +1,6 @@
 # Development guide
 
-How to run and work on the CleverCon production stack locally. For how the pieces
+How to run and work on the AgentRailProtocol production stack locally. For how the pieces
 fit together see [architecture.md](architecture.md); for the repo layout and
 contribution flow see [CONTRIBUTING.md](../CONTRIBUTING.md).
 
@@ -16,8 +16,8 @@ contribution flow see [CONTRIBUTING.md](../CONTRIBUTING.md).
 ## Install and configure
 
 ```bash
-git clone https://github.com/clevercon-protocol/clevercon.git
-cd clevercon
+git clone https://github.com/agentrail-protocol-protocol/agentrail-protocol.git
+cd agentrail-protocol
 cp .env.example .env      # then fill in the values
 npm install
 ```
@@ -49,8 +49,8 @@ npx tsx scripts/fund-testnet-usdc.ts    # swap XLM -> USDC on the testnet DEX
 
 ```bash
 docker compose up -d postgres redis
-npm run -w @clevercon/db generate       # generate the Prisma client
-npm run -w @clevercon/db push           # apply the schema (schema-push repo; no migrations dir)
+npm run -w @agentrail-protocol/db generate       # generate the Prisma client
+npm run -w @agentrail-protocol/db push           # apply the schema (schema-push repo; no migrations dir)
 npm run db:seed                         # optional: sample services + data
 ```
 
@@ -62,10 +62,10 @@ based: `schema.prisma` is the source of truth and `db push` applies it.
 Run each service in its own terminal:
 
 ```bash
-npm run dev -w @clevercon/api        # NestJS API on :4100
-npm run dev -w @clevercon/workers    # BullMQ: execution, proofs, settlement
-npm run dev -w @clevercon/indexer    # on-chain event ingestion + balance mirror
-npm run dev -w @clevercon/web        # the dApp (Vite) on :5173
+npm run dev -w @agentrail-protocol/api        # NestJS API on :4100
+npm run dev -w @agentrail-protocol/workers    # BullMQ: execution, proofs, settlement
+npm run dev -w @agentrail-protocol/indexer    # on-chain event ingestion + balance mirror
+npm run dev -w @agentrail-protocol/web        # the dApp (Vite) on :5173
 ```
 
 The dApp defaults to demo mode; for the live local stack set `apps/web/.env.local`
@@ -74,7 +74,7 @@ with `VITE_BACKEND=full`, `VITE_NETWORK=testnet`, `VITE_API_URL=http://localhost
 Optional: run the reference provider so hires have a live endpoint to fulfill:
 
 ```bash
-npm run dev -w @clevercon/reference-provider   # a canonical provider on :4200
+npm run dev -w @agentrail-protocol/reference-provider   # a canonical provider on :4200
 ```
 
 ## The end-to-end harness
@@ -106,7 +106,7 @@ npm run build          # build the dashboard + web app
 Unit tests use mocked Prisma/fetch and need no services. Integration tests
 (`*.integration.test.ts`) run only when `TEST_DATABASE_URL` is set, and they wipe
 data, so point them at an **isolated** schema (a `cctest` schema), never the app's
-`clevercon` schema.
+`agentrail-protocol` schema.
 
 For contracts: `cargo test` in `contracts/agent-vault` or `contracts/policy-verifier`.
 

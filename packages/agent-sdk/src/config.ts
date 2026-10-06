@@ -124,7 +124,7 @@ export function resolveConfig(config: AgentConfig): ResolvedConfig {
     facilitatorUrl:
       config.facilitatorUrl ?? process.env.X402_FACILITATOR_URL ?? DEFAULT_FACILITATOR_URL,
     rpcUrl: config.rpcUrl ?? DEFAULT_RPC_URL,
-    realm: config.realm ?? `clevercon-${manifest.agent_id}`,
+    realm: config.realm ?? `agentrail-protocol-${manifest.agent_id}`,
     cors: config.cors ?? true,
     gracefulShutdown: config.gracefulShutdown ?? true,
     syncFacilitatorOnStart: config.syncFacilitatorOnStart ?? true,

@@ -11,7 +11,7 @@ const opts = {
   secretKey: 'SSECRET',
   network: 'stellar:testnet',
   rpcUrl: 'http://rpc',
-  realm: 'clevercon-test',
+  realm: 'agentrail-protocol-test',
 };
 
 function appWith(deps: SdkDeps, handler: express.RequestHandler) {

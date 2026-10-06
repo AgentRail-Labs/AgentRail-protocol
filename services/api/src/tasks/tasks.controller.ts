@@ -1,6 +1,6 @@
 import { Body, Controller, Get, Headers, Param, Post, Query, UseGuards } from '@nestjs/common';
 import { z } from 'zod';
-import { TaskMode, TaskStatus } from '@clevercon/db';
+import { TaskMode, TaskStatus } from '@agentrail-protocol/db';
 import { TasksService } from './tasks.service.js';
 import { ApiAuthGuard } from '../auth/api-auth.guard.js';
 import { CurrentUser } from '../auth/current-user.decorator.js';

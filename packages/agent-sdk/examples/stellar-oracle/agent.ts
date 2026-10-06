@@ -1,5 +1,5 @@
 /**
- * StellarOracle, rebuilt on `@clevercon/agent-sdk`.
+ * StellarOracle, rebuilt on `@agentrail-protocol/agent-sdk`.
  *
  * Behavioural parity with `packages/agents/stellar-oracle`: same manifest, same
  * `/health` and `/` shapes, same `POST /query` contract and x402 paywall, same
@@ -7,7 +7,7 @@
  * supplies everything the hand-written `server.ts` + `register.ts` did.
  */
 import 'dotenv/config';
-import { createAgent, type AgentTask } from '@clevercon/agent-sdk';
+import { createAgent, type AgentTask } from '@agentrail-protocol/agent-sdk';
 import {
   getXLMUSDCTrades,
   getOrderbook,

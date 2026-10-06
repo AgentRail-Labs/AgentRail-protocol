@@ -13,7 +13,7 @@
  * (verifier.rs + fixtures/vectors.rs) byte-for-byte:
  *
  *   [  0.. 32) pi_commitment      = SHA-256(PI0 || PI1 || PI2 || PI3)
- *   [ 32.. 64) circuit_id         = SHA-256("clevercon-spend-policy-v1")
+ *   [ 32.. 64) circuit_id         = SHA-256("agentrail-protocol-spend-policy-v1")
  *   [ 64.. 96) linearisation_eval = SHA-256(zeta || grand_product_eval)
  *   [ 96..128) grand_product_eval
  *   [128..160) selector_evals_hash
@@ -27,7 +27,7 @@
 import { createHash, randomBytes } from 'node:crypto';
 import { encodePublicInputs } from './policy-inputs.js';
 
-export const CIRCUIT_DOMAIN_SEP = 'clevercon-spend-policy-v1';
+export const CIRCUIT_DOMAIN_SEP = 'agentrail-protocol-spend-policy-v1';
 
 // Must match the VK the contract is initialised with (fixtures/vectors.rs).
 const CIRCUIT_SIZE = 16_384;

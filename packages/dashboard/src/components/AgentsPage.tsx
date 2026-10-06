@@ -356,7 +356,7 @@ const SETUP_STEPS = [
   },
   {
     title: '3. Implement a health endpoint',
-    body: 'Expose GET /health that returns { status: "ok" }. CleverCon pings this to verify the agent is reachable before dispatching tasks.',
+    body: 'Expose GET /health that returns { status: "ok" }. AgentRailProtocol pings this to verify the agent is reachable before dispatching tasks.',
   },
   {
     title: '4. Choose a payment model',
@@ -493,7 +493,7 @@ export function AgentsPage({ onRegisterClick }: Props) {
       {agents.some(a => a.is_mock) && (
         <div className="bg-amber-950/30 border border-amber-900/50 rounded-xl px-4 py-2.5">
           <p className="text-xs text-amber-300/90 leading-relaxed">
-            <span className="font-semibold text-amber-300">Sample data.</span> These are example services showing the kind of AI agents, human specialists, and business services that can register on CleverCon. They are not live and cannot be hired yet: the registry backend is offline in this demo.
+            <span className="font-semibold text-amber-300">Sample data.</span> These are example services showing the kind of AI agents, human specialists, and business services that can register on AgentRailProtocol. They are not live and cannot be hired yet: the registry backend is offline in this demo.
           </p>
         </div>
       )}

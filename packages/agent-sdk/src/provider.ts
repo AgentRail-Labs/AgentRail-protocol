@@ -1,9 +1,9 @@
 import { createServer, type IncomingMessage, type ServerResponse, type Server } from 'node:http';
 
 /**
- * The CleverCon provider fulfillment SDK: the small amount of glue that turns a
+ * The AgentRailProtocol provider fulfillment SDK: the small amount of glue that turns a
  * function into a service the marketplace can hire. When a buyer hires your
- * service, the CleverCon worker POSTs each plan step to your endpoint and your
+ * service, the AgentRailProtocol worker POSTs each plan step to your endpoint and your
  * handler's return value becomes the step output the buyer sees (and, when the
  * task is locked on-chain, what the vault pays you for on settlement).
  *
@@ -11,7 +11,7 @@ import { createServer, type IncomingMessage, type ServerResponse, type Server } 
  * single file with no framework. Import it from the lightweight subpath so you
  * do not pull in the x402/mpp agent runtime:
  *
- *     import { createProvider } from '@clevercon/agent-sdk/provider';
+ *     import { createProvider } from '@agentrail-protocol/agent-sdk/provider';
  *
  * Fulfillment contract (must match services/workers executor):
  *   POST <endpoint>
@@ -28,7 +28,7 @@ export const MAX_OUTPUT_CHARS = 2000;
 export interface FulfillmentRequest {
   /** The plan step action the buyer asked this provider to perform. */
   action: string;
-  /** The CleverCon task id this step belongs to (useful for logging/idempotency). */
+  /** The AgentRailProtocol task id this step belongs to (useful for logging/idempotency). */
   taskId: string;
   /** The full parsed JSON body the worker sent (action/taskId plus any extras). */
   body: Record<string, unknown>;
@@ -86,12 +86,12 @@ function encodeResult(result: FulfillmentResult): { contentType: string; body: s
 }
 
 /**
- * Wire a CleverCon provider from a single fulfillment function. Handles the
+ * Wire a AgentRailProtocol provider from a single fulfillment function. Handles the
  * health check, body parsing, JSON/text encoding, and error-to-500 mapping so
  * the only thing you write is the work itself.
  */
 export function createProvider(options: ProviderOptions): Provider {
-  const name = options.name ?? 'clevercon-provider';
+  const name = options.name ?? 'agentrail-protocol-provider';
   const log: Logger = options.logger ?? console;
   const defaultPort = options.port ?? 4200;
 

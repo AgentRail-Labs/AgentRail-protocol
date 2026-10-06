@@ -1,4 +1,4 @@
-import { Prisma, type PrismaClient } from '@clevercon/db';
+import { Prisma, type PrismaClient } from '@agentrail-protocol/db';
 import type { NormalizedEvent } from './events.js';
 
 /** Vault event payload shape (see events.ts decodeSorobanEvent). */

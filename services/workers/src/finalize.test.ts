@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { Keypair } from '@stellar/stellar-sdk';
-import { encryptSecret } from '@clevercon/db';
+import { encryptSecret } from '@agentrail-protocol/db';
 import { finalizeTaskIfComplete, type CompleteFn } from './settlement.js';
 
 interface TaskRow {

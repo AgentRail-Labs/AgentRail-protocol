@@ -1,7 +1,7 @@
 # `policy-verifier`
 
 > Standalone Soroban proof-verifier contract for private spending policies —
-> CleverCon Issue [#123](https://github.com/clevercon-protocol/clevercon/issues/123)
+> AgentRailProtocol Issue [#123](https://github.com/agentrail-protocol-protocol/agentrail-protocol/issues/123)
 
 ---
 

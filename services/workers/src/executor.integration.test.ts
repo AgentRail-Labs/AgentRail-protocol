@@ -45,7 +45,7 @@ const failFetch = (async () => new Response('boom', { status: 500 })) as typeof 
 describe.skipIf(!DB)('executeTask reputation + health (integration, real Postgres)', () => {
   beforeAll(async () => {
     process.env.DATABASE_URL = DB;
-    const { PrismaClient } = await import('@clevercon/db');
+    const { PrismaClient } = await import('@agentrail-protocol/db');
     prisma = new PrismaClient();
     await prisma.$connect();
     ({ executeTask } = await import('./executor.js'));

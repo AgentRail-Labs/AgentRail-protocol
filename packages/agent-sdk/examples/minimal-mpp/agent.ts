@@ -4,7 +4,7 @@
  * retry/backoff, and graceful deregistration on SIGTERM.
  */
 import 'dotenv/config';
-import { createAgent } from '@clevercon/agent-sdk';
+import { createAgent } from '@agentrail-protocol/agent-sdk';
 
 const SECRET_KEY = process.env.EXAMPLE_MPP_SECRET_KEY;
 if (!SECRET_KEY) {

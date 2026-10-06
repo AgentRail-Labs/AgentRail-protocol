@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { TaskStatus } from '@clevercon/db';
+import { TaskStatus } from '@agentrail-protocol/db';
 import { PrismaService } from '../prisma/prisma.service.js';
 
 export type ActivityKind =

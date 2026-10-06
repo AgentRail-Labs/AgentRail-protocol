@@ -1,5 +1,5 @@
 import { describe, it, expect, vi } from 'vitest';
-import { createSpender, CleverConError } from './spender.js';
+import { createSpender, AgentRailProtocolError } from './spender.js';
 
 function mockFetch(status = 200, body: unknown = { id: 't1' }) {
   const calls: { url: string; init: RequestInit }[] = [];
@@ -65,9 +65,9 @@ describe('createSpender', () => {
     expect(b.available).toBe(4);
   });
 
-  it('maps 401 to a CleverConError', async () => {
+  it('maps 401 to a AgentRailProtocolError', async () => {
     const { fetchImpl } = mockFetch(401, { message: 'nope' });
     const cc = createSpender({ apiKey: KEY, apiUrl: 'http://x', fetchImpl });
-    await expect(cc.getBudget()).rejects.toBeInstanceOf(CleverConError);
+    await expect(cc.getBudget()).rejects.toBeInstanceOf(AgentRailProtocolError);
   });
 });

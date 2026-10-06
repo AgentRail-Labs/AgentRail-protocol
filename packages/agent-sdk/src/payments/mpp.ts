@@ -77,7 +77,7 @@ export function withMpp(opts: WithMppOptions, deps: SdkDeps = {}): RequestHandle
         amount,
         currency: asset,
         recipient: opts.payTo,
-        description: opts.description ?? 'Paid agent task - CleverCon',
+        description: opts.description ?? 'Paid agent task - AgentRailProtocol',
       })(fetchReq)) as MppChargeResult;
 
       if (result.status === 402) {

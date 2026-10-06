@@ -94,7 +94,7 @@ describe('spend-policy binding proof', () => {
   });
 
   it('exposes the circuit domain separator and a nullifier generator', () => {
-    expect(CIRCUIT_DOMAIN_SEP).toBe('clevercon-spend-policy-v1');
+    expect(CIRCUIT_DOMAIN_SEP).toBe('agentrail-protocol-spend-policy-v1');
     expect(generateNullifier()).toHaveLength(32);
     expect(generateNullifier().equals(generateNullifier())).toBe(false);
   });

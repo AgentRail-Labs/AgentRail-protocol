@@ -1,10 +1,10 @@
 /**
- * The CleverCon spender SDK: give any app or agent a bounded, non-custodial
+ * The AgentRailProtocol spender SDK: give any app or agent a bounded, non-custodial
  * Stellar spending account in a few calls. Zero runtime dependencies (global
  * fetch only), keyed by a scoped API key, so importing it does not pull in x402
  * or express. It drives the same public API the console and MCP use.
  *
- *   const cc = createSpender({ apiKey: process.env.CLEVERCON_API_KEY! });
+ *   const cc = createSpender({ apiKey: process.env.AGENTRAIL_PROTOCOL_API_KEY! });
  *   await cc.pay('G...', 5, { reason: 'design work' });
  *   await cc.disburse([{ payee: 'G...', amount: 2 }, { payee: 'G...', amount: 3 }]);
  *   const { available } = await cc.getBudget();
@@ -16,7 +16,7 @@
 export interface SpenderOptions {
   /** Scoped API key (cc_...). */
   apiKey: string;
-  /** API base URL. Defaults to CLEVERCON_API_URL or http://localhost:4100. */
+  /** API base URL. Defaults to AGENTRAIL_PROTOCOL_API_URL or http://localhost:4100. */
   apiUrl?: string;
   /** Override fetch (for tests or a custom agent). Defaults to global fetch. */
   fetchImpl?: typeof fetch;
@@ -63,17 +63,17 @@ export interface SavedLimit {
 }
 
 /** An API call that failed; carries the HTTP status so callers can branch on it. */
-export class CleverConError extends Error {
+export class AgentRailProtocolError extends Error {
   constructor(
     public readonly status: number,
     message: string,
   ) {
     super(message);
-    this.name = 'CleverConError';
+    this.name = 'AgentRailProtocolError';
   }
 }
 
-export interface CleverConClient {
+export interface AgentRailProtocolClient {
   /** Pay a single address, bounded by a saved limit or one derived from the payment.
    *  Pass `idempotencyKey` so a retried call (e.g. after a timeout) returns the
    *  original spend instead of paying twice. */
@@ -112,10 +112,10 @@ export interface CleverConClient {
 // can take several seconds on a busy RPC, so the default is generous.
 const DEFAULT_TIMEOUT = 60_000;
 
-export function createSpender(options: SpenderOptions): CleverConClient {
+export function createSpender(options: SpenderOptions): AgentRailProtocolClient {
   const apiUrl = (
     options.apiUrl ??
-    (typeof process !== 'undefined' ? process.env?.CLEVERCON_API_URL : undefined) ??
+    (typeof process !== 'undefined' ? process.env?.AGENTRAIL_PROTOCOL_API_URL : undefined) ??
     'http://localhost:4100'
   ).replace(/\/+$/, '');
   const fetchImpl = options.fetchImpl ?? fetch;
@@ -137,10 +137,10 @@ export function createSpender(options: SpenderOptions): CleverConClient {
       } catch {
         detail = await res.text().catch(() => '');
       }
-      if (res.status === 401) throw new CleverConError(401, 'Unauthorized: check your API key');
+      if (res.status === 401) throw new AgentRailProtocolError(401, 'Unauthorized: check your API key');
       if (res.status === 429)
-        throw new CleverConError(429, `Daily API quota exceeded${detail ? `: ${detail}` : ''}`);
-      throw new CleverConError(res.status, detail || `HTTP ${res.status}`);
+        throw new AgentRailProtocolError(429, `Daily API quota exceeded${detail ? `: ${detail}` : ''}`);
+      throw new AgentRailProtocolError(res.status, detail || `HTTP ${res.status}`);
     }
     if (res.status === 204) return undefined as T;
     return (await res.json()) as T;

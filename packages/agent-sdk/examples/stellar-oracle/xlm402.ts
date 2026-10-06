@@ -4,7 +4,7 @@
  * (compare `packages/agents/stellar-oracle/src/x402-consumer.ts`).
  */
 import { decodePaymentResponseHeader } from '@x402/fetch';
-import { createPayingFetch } from '@clevercon/agent-sdk';
+import { createPayingFetch } from '@agentrail-protocol/agent-sdk';
 
 const SECRET_KEY = process.env.EXAMPLE_ORACLE_SECRET_KEY ?? '';
 const NETWORK = process.env.STELLAR_NETWORK ?? 'stellar:testnet';

@@ -3,7 +3,7 @@
  * Runs only when TEST_DATABASE_URL is set.
  */
 import { describe, it, expect, beforeAll, afterAll, beforeEach } from 'vitest';
-import { verifyBindingProofLocally, buildBindingProof } from '@clevercon/common';
+import { verifyBindingProofLocally, buildBindingProof } from '@agentrail-protocol/common';
 
 const DB = process.env.TEST_DATABASE_URL;
 
@@ -15,7 +15,7 @@ let policies: any;
 describe.skipIf(!DB)('Policies (integration, real Postgres)', () => {
   beforeAll(async () => {
     process.env.DATABASE_URL = DB;
-    const { PrismaClient } = await import('@clevercon/db');
+    const { PrismaClient } = await import('@agentrail-protocol/db');
     prisma = new PrismaClient();
     await prisma.$connect();
     const { PoliciesService } = await import('./policies.service.js');

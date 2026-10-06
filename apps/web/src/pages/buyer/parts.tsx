@@ -1022,13 +1022,13 @@ export function DelegateCard() {
       <CardHeader
         icon={ShieldCheck}
         title="Autopay"
-        hint="Let CleverCon settle your hires automatically, within your limits"
+        hint="Let AgentRailProtocol settle your hires automatically, within your limits"
       />
       <div className="p-5 pt-4">
         <p className="text-sm text-slate-400">
           Enable autopay once so your jobs settle automatically without a wallet prompt each time.
           The vault enforces your spending limits on every payment, so autopay can never overspend
-          or pay an unapproved party. (This is CleverCon's bounded delegate; it holds no funds.)
+          or pay an unapproved party. (This is AgentRailProtocol's bounded delegate; it holds no funds.)
         </p>
         <div className="mt-3 flex items-center justify-between gap-3">
           <span className="font-mono text-xs text-slate-500">
@@ -1250,11 +1250,11 @@ export function AgentWalletCard() {
       <CardHeader
         icon={KeyRound}
         title="Your agent's wallet"
-        hint="For paying services outside CleverCon (x402); we store only the public key"
+        hint="For paying services outside AgentRailProtocol (x402); we store only the public key"
       />
       <div className="p-5 pt-4">
         <p className="text-sm text-slate-400">
-          To spend at services outside CleverCon (the open x402/MPP economy), your agent needs its
+          To spend at services outside AgentRailProtocol (the open x402/MPP economy), your agent needs its
           own key. You register only its public key here. The vault tops it up in bounded amounts
           under your policy, and your agent signs its own payments. We never hold its secret or your
           funds.

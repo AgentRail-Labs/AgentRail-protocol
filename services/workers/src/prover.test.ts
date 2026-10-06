@@ -1,7 +1,7 @@
 import { describe, it, expect, vi } from 'vitest';
 import { createHash } from 'node:crypto';
 import { generateProof } from './prover.js';
-import { verifyBindingProofLocally } from '@clevercon/common';
+import { verifyBindingProofLocally } from '@agentrail-protocol/common';
 
 const PAYEE = 'GA7QYNF7SOWQ3GLR2BGMZEHXAVIRZA4KVWLTJJFC7MGXUA74P7UJVSGZ';
 const AMOUNT = 5_000_000n;

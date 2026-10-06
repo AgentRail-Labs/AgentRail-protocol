@@ -5,7 +5,7 @@ import {
   Injectable,
 } from '@nestjs/common';
 import { Reflector } from '@nestjs/core';
-import type { Role } from '@clevercon/db';
+import type { Role } from '@agentrail-protocol/db';
 import { ROLES_KEY } from './roles.decorator.js';
 import { hasRequiredRoles } from './rbac.js';
 import type { HttpRequest } from './types.js';

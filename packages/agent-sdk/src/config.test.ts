@@ -22,7 +22,7 @@ describe('resolveConfig', () => {
     expect(resolved.publicKey).toBe(Keypair.fromSecret(SECRET).publicKey());
     expect(resolved.taskPath).toBe('/query');
     expect(resolved.currency).toBe('USDC');
-    expect(resolved.realm).toBe('clevercon-demo');
+    expect(resolved.realm).toBe('agentrail-protocol-demo');
   });
 
   it.each([

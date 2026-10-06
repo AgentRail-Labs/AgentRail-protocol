@@ -46,7 +46,7 @@ function WebhooksCard() {
         <h2 className="font-semibold">Webhooks</h2>
       </div>
       <p className="mt-2 text-sm text-slate-400">
-        Get a signed POST (HMAC-SHA256 in x-clevercon-signature) when your tasks complete or fail.
+        Get a signed POST (HMAC-SHA256 in x-agentrail-protocol-signature) when your tasks complete or fail.
       </p>
       {isDemo() ? (
         <p className="mt-3 text-sm text-slate-500">Connect in full mode to register webhooks.</p>
@@ -62,7 +62,7 @@ function WebhooksCard() {
             <input
               value={url}
               onChange={(e) => setUrl(e.target.value)}
-              placeholder="https://your-app.example.com/webhooks/clevercon"
+              placeholder="https://your-app.example.com/webhooks/agentrail-protocol"
               className={`min-w-64 flex-1 ${controls.field}`}
             />
             <button
@@ -118,10 +118,10 @@ function mcpServerConfig(apiUrl: string, apiKey: string): string {
   return JSON.stringify(
     {
       mcpServers: {
-        clevercon: {
+        agentRailProtocol: {
           command: 'npx',
-          args: ['-y', '@clevercon/mcp'],
-          env: { CLEVERCON_API_URL: apiUrl, CLEVERCON_API_KEY: apiKey },
+          args: ['-y', '@agentrail-protocol/mcp'],
+          env: { AGENTRAIL_PROTOCOL_API_URL: apiUrl, AGENTRAIL_PROTOCOL_API_KEY: apiKey },
         },
       },
     },
@@ -375,11 +375,11 @@ function McpConnectCard() {
         within your policy.
       </p>
       <ol className="mt-3 list-decimal space-y-1 pl-5 text-sm text-slate-400">
-        <li>Create an API key above and copy it into CLEVERCON_API_KEY.</li>
+        <li>Create an API key above and copy it into AGENTRAIL_PROTOCOL_API_KEY.</li>
         <li>
           Paste this into your MCP client config (Claude Desktop: Settings, Developer, Edit Config).
         </li>
-        <li>Restart the client. The clevercon tools appear and spend on the rail.</li>
+        <li>Restart the client. The agentRailProtocol tools appear and spend on the rail.</li>
       </ol>
       <div className="mt-3">
         <CopyBlock text={cfg} label="MCP config" />
@@ -388,7 +388,7 @@ function McpConnectCard() {
         Running from source before the npm publish? Set command to node and point args at the built
         packages/mcp/dist/server.js path. Full SDK and MCP docs:{' '}
         <a
-          href="https://github.com/clevercon-protocol/clevercon/tree/main/packages/mcp"
+          href="https://github.com/agentrail-protocol-protocol/agentrail-protocol/tree/main/packages/mcp"
           className="text-violet-300 hover:text-violet-200"
         >
           packages/mcp

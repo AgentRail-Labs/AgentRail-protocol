@@ -1,8 +1,8 @@
-# @clevercon/api (services/api)
+# @agentrail-protocol/api (services/api)
 
 NestJS API: the stateless application backend. Modular by domain, with RBAC
 guards, typed fail-fast config, a WebSocket gateway (Redis-backed), and Prisma
-via `@clevercon/db`. Slow/at-risk work is offloaded to `services/workers`.
+via `@agentrail-protocol/db`. Slow/at-risk work is offloaded to `services/workers`.
 
 ## Status
 

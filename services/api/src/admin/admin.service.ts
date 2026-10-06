@@ -1,6 +1,6 @@
 import { BadRequestException, Injectable, NotFoundException, Optional } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-import { Prisma, PaymentStatus, Role, ServiceStatus } from '@clevercon/db';
+import { Prisma, PaymentStatus, Role, ServiceStatus } from '@agentrail-protocol/db';
 import type { AppEnv } from '../config/env.validation.js';
 import { PrismaService } from '../prisma/prisma.service.js';
 import { VaultContractService } from '../vault/vault-contract.service.js';

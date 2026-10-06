@@ -3,7 +3,7 @@
  *
  * AES-256-GCM with a master key from DELEGATE_ENCRYPTION_KEY (32 bytes, hex or
  * base64). This is the dev/testnet at-rest protection; production should source
- * the key from a KMS and ideally encrypt/decrypt inside it. Lives in @clevercon/db
+ * the key from a KMS and ideally encrypt/decrypt inside it. Lives in @agentrail-protocol/db
  * so both the API (built) and the worker (tsx) share one implementation.
  *
  * Ciphertext format: base64(iv) : base64(authTag) : base64(ciphertext).

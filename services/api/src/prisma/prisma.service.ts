@@ -1,5 +1,5 @@
 import { Injectable, type OnModuleDestroy, type OnModuleInit } from '@nestjs/common';
-import { PrismaClient } from '@clevercon/db';
+import { PrismaClient } from '@agentrail-protocol/db';
 
 /**
  * Nest-managed Prisma client. Connects on module init and disconnects on

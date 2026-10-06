@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { Role } from '@clevercon/db';
+import { Role } from '@agentrail-protocol/db';
 import { PrismaService } from '../prisma/prisma.service.js';
 import { safeEqualHex, sha256 } from '../auth/crypto.util.js';
 import { generateApiKey, parseApiKey } from './api-key.util.js';

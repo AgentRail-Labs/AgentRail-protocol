@@ -1,5 +1,5 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { Prisma, ServiceStatus } from '@clevercon/db';
+import { Prisma, ServiceStatus } from '@agentrail-protocol/db';
 import { PrismaService } from '../prisma/prisma.service.js';
 
 type ServiceWithRep = Prisma.ServiceGetPayload<{ include: { reputation: true } }>;

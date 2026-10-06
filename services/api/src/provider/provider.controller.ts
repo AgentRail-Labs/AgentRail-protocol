@@ -1,6 +1,6 @@
 import { Body, Controller, Get, Param, Patch, Post, UseGuards } from '@nestjs/common';
 import { z } from 'zod';
-import { PricingModel } from '@clevercon/db';
+import { PricingModel } from '@agentrail-protocol/db';
 import { ProviderService } from './provider.service.js';
 import { JwtAuthGuard } from '../auth/jwt-auth.guard.js';
 import { CurrentUser } from '../auth/current-user.decorator.js';

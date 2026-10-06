@@ -95,7 +95,7 @@ export class AgentService {
   ) {}
 
   /**
-   * Which LLM backs the planner. CleverCon is provider-agnostic: keep native
+   * Which LLM backs the planner. AgentRailProtocol is provider-agnostic: keep native
    * Anthropic as the default, but a single OpenAI-compatible adapter covers
    * OpenAI, Gemini (its OpenAI-compat endpoint), OpenRouter, and local models
    * (Ollama/vLLM) via OPENAI_BASE_URL. AGENT_PROVIDER forces one; 'auto' picks

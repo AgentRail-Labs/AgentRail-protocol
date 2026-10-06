@@ -1,4 +1,4 @@
-import { createProvider } from '@clevercon/agent-sdk/provider';
+import { createProvider } from '@agentrail-protocol/agent-sdk/provider';
 import { Horizon, Asset } from '@stellar/stellar-sdk';
 
 /**

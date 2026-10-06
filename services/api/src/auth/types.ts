@@ -1,4 +1,4 @@
-import type { Role } from '@clevercon/db';
+import type { Role } from '@agentrail-protocol/db';
 
 export interface AuthUser {
   userId: string;

@@ -1,4 +1,4 @@
-import { type PrismaClient, StepStatus, TaskStatus } from '@clevercon/db';
+import { type PrismaClient, StepStatus, TaskStatus } from '@agentrail-protocol/db';
 import { enqueueSettlement } from './queue.js';
 import { finalizeTaskIfComplete } from './settlement.js';
 

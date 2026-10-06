@@ -8,11 +8,11 @@ import {
 // Update these with real handles as they go live. Entries with an empty url are
 // not rendered.
 const SOCIALS = [
-  { label: 'GitHub', url: 'https://github.com/clevercon-protocol/clevercon', icon: Github },
+  { label: 'GitHub', url: 'https://github.com/agentrail-protocol-protocol/agentrail-protocol', icon: Github },
   { label: 'X', url: '', icon: null },
   { label: 'Discord', url: '', icon: null },
 ];
-const GITHUB_URL = 'https://github.com/clevercon-protocol/clevercon';
+const GITHUB_URL = 'https://github.com/agentrail-protocol-protocol/agentrail-protocol';
 const CIPHERMIT_URL = 'https://github.com/Bosun-Josh121/ciphermit';
 
 /** Fade-and-rise on scroll into view. */
@@ -43,7 +43,7 @@ function Logo() {
       <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-violet-500 to-indigo-700 flex items-center justify-center shadow-lg shadow-violet-900/40">
         <Layers size={16} className="text-white" />
       </div>
-      <span className="text-[15px] font-bold tracking-tight text-white">CleverCon</span>
+      <span className="text-[15px] font-bold tracking-tight text-white">AgentRailProtocol</span>
     </div>
   );
 }
@@ -65,7 +65,7 @@ const PILLARS = [
     icon: Boxes, tint: 'from-emerald-500/20 to-transparent', ring: 'text-emerald-300', border: 'border-emerald-800/40',
     tag: 'The reach',
     title: 'Build on it',
-    body: 'A reusable SDK and a Stellar MCP server let any app or agent embed safe, private spending in a few calls. CleverCon is a rail others build on, not just a destination app.',
+    body: 'A reusable SDK and a Stellar MCP server let any app or agent embed safe, private spending in a few calls. AgentRailProtocol is a rail others build on, not just a destination app.',
   },
 ];
 
@@ -74,12 +74,12 @@ const CATEGORIES = [
   'Risk & Compliance', 'Human Services', 'Business Services',
 ];
 
-// CleverCon adapts to how much coordination a job needs. The rail is constant;
+// AgentRailProtocol adapts to how much coordination a job needs. The rail is constant;
 // planning is optional and only kicks in for genuinely multi-service work.
 const USAGE_MODES = [
   {
     icon: UserCheck, title: 'Pay a provider you chose',
-    body: 'Already know who you want? Point CleverCon at that service, set your rules, and it makes a single bounded, private payment. No planning, no matchmaking.',
+    body: 'Already know who you want? Point AgentRailProtocol at that service, set your rules, and it makes a single bounded, private payment. No planning, no matchmaking.',
   },
   {
     icon: Search, title: 'Find and pay one service',
@@ -252,7 +252,7 @@ export function Landing({ onLaunch }: { onLaunch: () => void }) {
           </Reveal>
           <Reveal delay={160}>
             <p className="mt-6 text-base sm:text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed">
-              CleverCon gives an AI agent a budget it cannot overspend, enforced on-chain and kept private.
+              AgentRailProtocol gives an AI agent a budget it cannot overspend, enforced on-chain and kept private.
               Fund a non-custodial vault, hire services from an open marketplace, and stay in control the whole time.
             </p>
           </Reveal>
@@ -306,12 +306,12 @@ export function Landing({ onLaunch }: { onLaunch: () => void }) {
         </div>
       </section>
 
-      {/* Everything CleverCon offers */}
+      {/* Everything AgentRailProtocol offers */}
       <section id="platform" className="px-5 py-20 border-t border-white/5">
         <div className="max-w-6xl mx-auto">
           <Reveal className="text-center max-w-2xl mx-auto">
             <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight text-balance">
-              Everything CleverCon offers
+              Everything AgentRailProtocol offers
             </h2>
             <p className="mt-3 text-slate-400">The vault and marketplace are live today. The rest is on the way, built in the open.</p>
           </Reveal>
@@ -412,7 +412,7 @@ export function Landing({ onLaunch }: { onLaunch: () => void }) {
                 <Shield size={17} className="text-emerald-300" />
               </div>
               <p className="text-sm text-slate-400 leading-relaxed">
-                <span className="text-white font-medium">Whatever does the spending is just a delegate.</span> CleverCon's
+                <span className="text-white font-medium">Whatever does the spending is just a delegate.</span> AgentRailProtocol's
                 orchestrator, your own agent via the SDK, or an MCP client, it makes no difference. The rail is what makes
                 delegation safe: even a compromised or careless delegate cannot spend outside the budget and private rules you set.
                 That, not the planning, is the point.
@@ -434,7 +434,7 @@ export function Landing({ onLaunch }: { onLaunch: () => void }) {
             </h2>
             <p className="mt-4 text-slate-400 leading-relaxed">
               Most agent-payment tools put your budget, your approved payees, and every payment on a public ledger for anyone to read.
-              CleverCon is built so the contract can enforce your spending policy and prove it was followed, without revealing the
+              AgentRailProtocol is built so the contract can enforce your spending policy and prove it was followed, without revealing the
               policy, the amounts, or the counterparties. That is what separates it from transparent, custodial, or SDK-only alternatives.
             </p>
             <p className="mt-4 text-sm text-slate-500">
@@ -449,7 +449,7 @@ export function Landing({ onLaunch }: { onLaunch: () => void }) {
             <p className="mt-6 text-sm text-slate-400 leading-relaxed">
               Concretely: a trading firm funds an agent to buy research data and sets rules, only five approved providers,
               at most $100 a purchase, $500 a week. Without privacy, rivals read its budget, its providers (its edge), and
-              when it ramps up before a trade. With CleverCon, the chain shows only that a payment was allowed. Try it:
+              when it ramps up before a trade. With AgentRailProtocol, the chain shows only that a payment was allowed. Try it:
             </p>
           </Reveal>
         </div>

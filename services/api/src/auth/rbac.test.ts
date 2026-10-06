@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { Role } from '@clevercon/db';
+import { Role } from '@agentrail-protocol/db';
 import { hasRequiredRoles } from './rbac';
 
 describe('hasRequiredRoles', () => {

@@ -2,7 +2,7 @@
 
 ## Pre-production status
 
-CleverCon currently runs on **Stellar Testnet**. Contracts, wallets, and funds
+AgentRailProtocol currently runs on **Stellar Testnet**. Contracts, wallets, and funds
 involved are all testnet assets with no real-world value. Even so, we treat
 security issues seriously, since the CleverVault contract, the PolicyVerifier, and
 the non-custodial delegate + settlement path are the foundation for a future
@@ -52,7 +52,7 @@ Out of scope:
 - `packages/dashboard` (the React frontend) and general UI/UX issues. Please
   still report these, but they are a lower priority during the current
   backend-hardening phase.
-- Third-party services CleverCon depends on (the Stellar network itself, the
+- Third-party services AgentRailProtocol depends on (the Stellar network itself, the
   x402 facilitator, Anthropic's API, Render). Report these to their respective
   maintainers.
 - Issues that require a compromised local environment or physical access to a

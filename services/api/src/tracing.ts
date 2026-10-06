@@ -29,7 +29,7 @@ export function startTracing(): void {
 
   const sdk = new NodeSDK({
     resource: resourceFromAttributes({
-      [ATTR_SERVICE_NAME]: process.env.OTEL_SERVICE_NAME ?? 'clevercon-api',
+      [ATTR_SERVICE_NAME]: process.env.OTEL_SERVICE_NAME ?? 'agentrail-protocol-api',
       [ATTR_SERVICE_VERSION]: process.env.npm_package_version ?? '0.0.0',
     }),
     traceExporter: new OTLPTraceExporter({ url: `${endpoint.replace(/\/$/, '')}/v1/traces` }),

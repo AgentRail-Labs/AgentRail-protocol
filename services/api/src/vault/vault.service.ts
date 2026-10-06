@@ -1,6 +1,6 @@
 import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common';
 import { StrKey } from '@stellar/stellar-sdk';
-import { Prisma } from '@clevercon/db';
+import { Prisma } from '@agentrail-protocol/db';
 import { PrismaService } from '../prisma/prisma.service.js';
 import { VaultContractService } from './vault-contract.service.js';
 import { DelegateService } from './delegate.service.js';

@@ -16,7 +16,7 @@ const mockConfig = { get: () => '' } as unknown as ConstructorParameters<
 describe.skipIf(!DB)('Admin (integration, real Postgres)', () => {
   beforeAll(async () => {
     process.env.DATABASE_URL = DB;
-    const { PrismaClient } = await import('@clevercon/db');
+    const { PrismaClient } = await import('@agentrail-protocol/db');
     prisma = new PrismaClient();
     await prisma.$connect();
     const { AdminService } = await import('./admin.service.js');

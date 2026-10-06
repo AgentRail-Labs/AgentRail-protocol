@@ -33,7 +33,7 @@ async function seedService(providerId: string, agentId: string, address: string,
 describe.skipIf(!DB)('Provider (integration, real Postgres)', () => {
   beforeAll(async () => {
     process.env.DATABASE_URL = DB;
-    const { PrismaClient } = await import('@clevercon/db');
+    const { PrismaClient } = await import('@agentrail-protocol/db');
     prisma = new PrismaClient();
     await prisma.$connect();
     const { ProviderService } = await import('./provider.service.js');

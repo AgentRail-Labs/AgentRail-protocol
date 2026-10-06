@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * Simple test script for CleverCon MCP Server
+ * Simple test script for AgentRailProtocol MCP Server
  * Tests that all tools are available and handle basic requests
  */
 
@@ -144,7 +144,7 @@ async function testSearchServices() {
 }
 
 async function runTests() {
-  console.log('🚀 Running CleverCon MCP Server tests...\n');
+  console.log('🚀 Running AgentRailProtocol MCP Server tests...\n');
 
   const tests = [testListTools, testSearchServices];
 

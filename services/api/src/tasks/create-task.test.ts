@@ -1,5 +1,5 @@
 import { describe, it, expect, vi } from 'vitest';
-import { TaskMode } from '@clevercon/db';
+import { TaskMode } from '@agentrail-protocol/db';
 import { TasksService } from './tasks.service.js';
 
 describe('createTask idempotency', () => {

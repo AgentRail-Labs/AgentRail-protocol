@@ -25,7 +25,7 @@ function signChallenge(xdr: string, kp: Keypair): string {
 describe.skipIf(!DB)('AuthService SEP-10 (integration, real Postgres)', () => {
   beforeAll(async () => {
     process.env.DATABASE_URL = DB;
-    const { PrismaClient } = await import('@clevercon/db');
+    const { PrismaClient } = await import('@agentrail-protocol/db');
     prisma = new PrismaClient();
     await prisma.$connect();
     const { AuthService } = await import('./auth.service.js');

@@ -1,5 +1,5 @@
 /**
- * Shared Prisma client for CleverCon services (api, indexer, workers).
+ * Shared Prisma client for AgentRailProtocol services (api, indexer, workers).
  *
  * Exposes a single pooled PrismaClient. A global singleton avoids exhausting
  * Postgres connections during dev hot-reload; in production each stateless

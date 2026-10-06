@@ -1,4 +1,4 @@
-import type { Role } from '@clevercon/db';
+import type { Role } from '@agentrail-protocol/db';
 
 /**
  * Access predicate: a user passes if no roles are required, or they hold at

@@ -1,5 +1,5 @@
 {
-  "name": "@clevercon/api",
+  "name": "@agentrail-protocol/api",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.126.0",
-    "@clevercon/db": "*",
+    "@agentrail-protocol/db": "*",
     "@nest-lab/throttler-storage-redis": "^1.2.0",
     "@nestjs/common": "^11.0.0",
     "@nestjs/config": "^4.0.0",

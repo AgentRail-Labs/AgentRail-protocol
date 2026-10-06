@@ -1,5 +1,5 @@
 {
-  "name": "@clevercon/agent-sdk",
+  "name": "@agentrail-protocol/agent-sdk",
   "version": "1.0.0",
   "type": "module",
   "main": "./src/index.ts",
@@ -13,7 +13,7 @@
     "example:mpp": "npx tsx examples/minimal-mpp/agent.ts"
   },
   "dependencies": {
-    "@clevercon/common": "*",
+    "@agentrail-protocol/common": "*",
     "@stellar/mpp": "^0.3.0",
     "@stellar/stellar-sdk": "^14.6.1",
     "@x402/core": "^2.8.0",

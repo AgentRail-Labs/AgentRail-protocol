@@ -1,6 +1,6 @@
 import { BadRequestException, Injectable, NotFoundException, Optional } from '@nestjs/common';
 import { createHash, randomBytes } from 'node:crypto';
-import { Prisma, ProofStatus } from '@clevercon/db';
+import { Prisma, ProofStatus } from '@agentrail-protocol/db';
 import { StrKey } from '@stellar/stellar-sdk';
 import { PrismaService } from '../prisma/prisma.service.js';
 import { QueueService } from '../queue/queue.service.js';

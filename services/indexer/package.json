@@ -1,5 +1,5 @@
 {
-  "name": "@clevercon/indexer",
+  "name": "@agentrail-protocol/indexer",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -9,7 +9,7 @@
     "test": "vitest run"
   },
   "dependencies": {
-    "@clevercon/db": "*",
+    "@agentrail-protocol/db": "*",
     "@stellar/stellar-sdk": "^14.6.1",
     "dotenv": "^16.4.0",
     "zod": "^3.23.8"

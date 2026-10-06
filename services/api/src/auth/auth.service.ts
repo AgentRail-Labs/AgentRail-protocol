@@ -1,7 +1,7 @@
 import { BadRequestException, Inject, Injectable, UnauthorizedException } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { StrKey, TransactionBuilder, WebAuth } from '@stellar/stellar-sdk';
-import { Role } from '@clevercon/db';
+import { Role } from '@agentrail-protocol/db';
 import { PrismaService } from '../prisma/prisma.service.js';
 import { randomToken, sha256 } from './crypto.util.js';
 import { AUTH_CONFIG, type AuthConfig } from './auth.config.js';

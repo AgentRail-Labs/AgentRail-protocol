@@ -1,6 +1,6 @@
-# @clevercon/web (apps/web)
+# @agentrail-protocol/web (apps/web)
 
-The next-generation CleverCon SPA (React 19 + Vite + React Router + TanStack Query
+The next-generation AgentRailProtocol SPA (React 19 + Vite + React Router + TanStack Query
 + Zustand + Tailwind). Role-aware shell for Buyer / Provider / Admin / Developer
 consoles behind wallet sign-in.
 
@@ -12,8 +12,8 @@ over to `apps/web` only once it reaches parity.
 ## Run
 
 ```bash
-npm run dev -w @clevercon/web     # http://localhost:5173 (demo mode)
-npm run build -w @clevercon/web   # typecheck + production build
+npm run dev -w @agentrail-protocol/web     # http://localhost:5173 (demo mode)
+npm run build -w @agentrail-protocol/web   # typecheck + production build
 ```
 
 Status: scaffold. Role-aware routing, demo sign-in, placeholder consoles. Buyer

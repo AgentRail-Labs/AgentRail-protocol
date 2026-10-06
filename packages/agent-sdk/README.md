@@ -1,21 +1,21 @@
-# @clevercon/agent-sdk
+# @agentrail-protocol/agent-sdk
 
-The SDK for CleverCon. Four surfaces, pick what your agent needs:
+The SDK for AgentRailProtocol. Four surfaces, pick what your agent needs:
 
 1. **Spend** (`createSpender`) — a bounded, non-custodial spending account over the
-   CleverCon API: pay, disburse, hire, set limits, read budget and activity, with a
+   AgentRailProtocol API: pay, disburse, hire, set limits, read budget and activity, with a
    scoped API key. The agent spends but never overspends or pays outside your
    policy, and never holds funds. **Start here if your agent needs to spend.**
 2. **Agent-key mode** (`createAgentWallet`) — the agent pulls working capital from
    the vault into its own wallet (bounded by your policy) and pays **external** x402
-   services with it. Start here to reach services outside CleverCon.
-3. **Be a provider** (`createProvider`) — list a service the CleverCon hire flow
+   services with it. Start here to reach services outside AgentRailProtocol.
+3. **Be a provider** (`createProvider`) — list a service the AgentRailProtocol hire flow
    calls per step; the vault settles you on-chain after each step succeeds.
 4. **Standalone paid agent** (`createAgent`) — run your own x402 / MPP paywall and
    charge callers directly, independent of the vault.
 
 The spending surfaces are on the package root; the provider is on a zero-dependency
-subpath (`@clevercon/agent-sdk/spender` is likewise dependency-free).
+subpath (`@agentrail-protocol/agent-sdk/spender` is likewise dependency-free).
 
 ## Spend (`createSpender`)
 
@@ -25,9 +25,9 @@ console). Fund the vault and authorize Autopay once in the dApp; after that the
 agent spends autonomously within your limits.
 
 ```ts
-import { createSpender } from '@clevercon/agent-sdk/spender';
+import { createSpender } from '@agentrail-protocol/agent-sdk/spender';
 
-const cc = createSpender({ apiKey: process.env.CLEVERCON_API_KEY! });
+const cc = createSpender({ apiKey: process.env.AGENTRAIL_PROTOCOL_API_KEY! });
 
 await cc.pay('G...PAYEE', 5, { reason: 'design work' });
 await cc.disburse([
@@ -44,20 +44,20 @@ const limit = await cc.setLimit({ perPaymentCeilingUsdc: 10, allowlist: ['G...']
   spend instead of paying twice.
 - `hire(opts)` — hire a registered service (also takes `idempotencyKey`).
 - `getBudget()` / `getActivity()` / `setLimit(limit)` / `listLimits()`.
-- Errors throw `CleverConError` carrying the HTTP status (401 bad key, 429 quota).
+- Errors throw `AgentRailProtocolError` carrying the HTTP status (401 bad key, 429 quota).
 
 ## Agent-key mode (`createAgentWallet`)
 
 Unites the two non-custodial halves of an agent's economy: it PULLS working capital
-from the CleverCon vault (bounded on-chain by your policy) and SPENDS it
+from the AgentRailProtocol vault (bounded on-chain by your policy) and SPENDS it
 autonomously on external x402 services. The platform never holds the agent's key,
 and both legs settle in the same USDC, so there is no swap between them.
 
 ```ts
-import { createAgentWallet } from '@clevercon/agent-sdk';
+import { createAgentWallet } from '@agentrail-protocol/agent-sdk';
 
 const wallet = createAgentWallet({
-  apiKey: process.env.CLEVERCON_API_KEY!, // the governed vault side
+  apiKey: process.env.AGENTRAIL_PROTOCOL_API_KEY!, // the governed vault side
   secretKey: process.env.AGENT_SECRET_KEY!, // the agent's OWN Stellar key
 });
 
@@ -72,12 +72,12 @@ The remaining two surfaces are for being paid, not spending:
 
 ## Marketplace provider (`createProvider`)
 
-The smallest amount of glue that turns a function into a service the CleverCon
+The smallest amount of glue that turns a function into a service the AgentRailProtocol
 marketplace can hire. Dependency-free (node:http only), so a provider is a
 single file with no framework. Import it from the lightweight subpath:
 
 ```ts
-import { createProvider } from '@clevercon/agent-sdk/provider';
+import { createProvider } from '@agentrail-protocol/agent-sdk/provider';
 
 const provider = createProvider({
   name: 'price-oracle',
@@ -92,7 +92,7 @@ const provider = createProvider({
 provider.listen(); // POST / to fulfill, GET /health for liveness
 ```
 
-Register the service with its endpoint URL, and CleverCon does the rest.
+Register the service with its endpoint URL, and AgentRailProtocol does the rest.
 
 ### Fulfillment contract
 
@@ -108,13 +108,13 @@ implements this for you; it is documented here so you know exactly what runs:
 | `GET <endpoint>/health` | `{ status: 'ok', provider }` |
 
 - `fulfill({ action, taskId, body })`, `action` is the plan step, `taskId` is
-  the CleverCon task, `body` is the full parsed request. Return a string (sent
+  the AgentRailProtocol task, `body` is the full parsed request. Return a string (sent
   verbatim) or any object (JSON-encoded). **Throw to fail the step** (mapped to
   HTTP 500, so the vault does not pay for it).
 - `provider.handle(req, res)`, the bare handler, to embed in an existing server
   or test without a socket. `provider.listen(port?)` opens an http server.
 
-The [`@clevercon/reference-provider`](../../services/reference-provider) service
+The [`@agentrail-protocol/reference-provider`](../../services/reference-provider) service
 is this SDK's dogfood example: a real, hireable provider built on `createProvider`.
 
 ## Standalone paid agent (`createAgent`)
@@ -129,7 +129,7 @@ heartbeat), graceful deregistration, and feedback reporting.
 
 ```ts
 import 'dotenv/config';
-import { createAgent } from '@clevercon/agent-sdk';
+import { createAgent } from '@agentrail-protocol/agent-sdk';
 
 const agent = createAgent({
   manifest: {
@@ -231,5 +231,5 @@ agent.stop(); // cancel heartbeat / pending retries
   a manifest, a handler, a wallet.
 
 ```bash
-EXAMPLE_ORACLE_SECRET_KEY=S... npm run example:oracle -w @clevercon/agent-sdk
+EXAMPLE_ORACLE_SECRET_KEY=S... npm run example:oracle -w @agentrail-protocol/agent-sdk
 ```

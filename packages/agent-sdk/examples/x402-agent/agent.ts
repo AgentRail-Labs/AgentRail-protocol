@@ -1,23 +1,23 @@
 /**
- * Agent-key mode: an autonomous agent that funds itself from a CleverCon vault
+ * Agent-key mode: an autonomous agent that funds itself from a AgentRailProtocol vault
  * (governed, non-custodial) and pays external x402 services with those funds.
  *
  * The vault owner grants a scoped API key and sets a spending limit; the agent
  * holds its OWN Stellar key (the platform never sees it). Both legs settle in the
  * same USDC, so no swap is needed.
  *
- *   CLEVERCON_API_KEY=cc_...  AGENT_SECRET_KEY=S...  \
+ *   AGENTRAIL_PROTOCOL_API_KEY=cc_...  AGENT_SECRET_KEY=S...  \
  *   ORACLE_URL=http://localhost:4001/query           \
  *   npx tsx examples/x402-agent/agent.ts
  */
-import { createAgentWallet } from '@clevercon/agent-sdk';
+import { createAgentWallet } from '@agentrail-protocol/agent-sdk';
 
-const API_KEY = process.env.CLEVERCON_API_KEY;
+const API_KEY = process.env.AGENTRAIL_PROTOCOL_API_KEY;
 const SECRET_KEY = process.env.AGENT_SECRET_KEY;
 const ORACLE_URL = process.env.ORACLE_URL ?? 'http://localhost:4001/query';
 
 if (!API_KEY || !SECRET_KEY) {
-  console.error('Set CLEVERCON_API_KEY (cc_...) and AGENT_SECRET_KEY (S...).');
+  console.error('Set AGENTRAIL_PROTOCOL_API_KEY (cc_...) and AGENT_SECRET_KEY (S...).');
   process.exit(1);
 }
 
@@ -25,7 +25,7 @@ async function main() {
   const wallet = createAgentWallet({
     apiKey: API_KEY!,
     secretKey: SECRET_KEY!,
-    apiUrl: process.env.CLEVERCON_API_URL, // defaults to http://localhost:4100
+    apiUrl: process.env.AGENTRAIL_PROTOCOL_API_URL, // defaults to http://localhost:4100
     network: process.env.STELLAR_NETWORK, // defaults to stellar:testnet
   });
   console.log('agent wallet:', wallet.address);

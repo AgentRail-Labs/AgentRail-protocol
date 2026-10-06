@@ -1,7 +1,7 @@
 /**
  * The money-verb MCP tools: pay, disburse, set_limit, list_limits, get_budget,
  * get_activity. Together with the hire-flow tools they give an agent a full,
- * bounded, non-custodial spending account on CleverCon, driven with an API key
+ * bounded, non-custodial spending account on AgentRailProtocol, driven with an API key
  * exactly as the console does with a session. Every spend is bounded by a policy
  * and released from the vault; the agent never holds funds.
  */

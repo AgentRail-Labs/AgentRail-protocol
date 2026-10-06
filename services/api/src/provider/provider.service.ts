@@ -1,6 +1,6 @@
 import { Injectable, NotFoundException, Optional } from '@nestjs/common';
 import { createHash } from 'node:crypto';
-import { Prisma, PaymentStatus, PricingModel, Role, ServiceStatus } from '@clevercon/db';
+import { Prisma, PaymentStatus, PricingModel, Role, ServiceStatus } from '@agentrail-protocol/db';
 import { PrismaService } from '../prisma/prisma.service.js';
 import { RegistryContractService } from './registry-contract.service.js';
 

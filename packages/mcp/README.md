@@ -1,10 +1,10 @@
-# CleverCon MCP Server
+# AgentRailProtocol MCP Server
 
 Give an AI agent a **bounded, non-custodial Stellar spending account** in two minutes. This Model Context Protocol server lets any MCP client (Claude Desktop, Cursor, your own agent) discover services, pay and disburse USDC, hire services, set spending limits, and read its budget and activity, all driven with a scoped API key and bounded on-chain by the vault. The agent can spend but never overspend or pay outside your rules, and never holds funds.
 
 ## How it works
 
-Every action goes through the CleverCon API with your `x-api-key`. Spends are bounded by a policy (a per-payment cap, a rolling cap, and/or an allowlist) and released from your vault via a proof-gated on-chain path. The API key grants no signing authority over funds: it can only spend within the limits you set. Fund the vault and authorize Autopay once in the dApp; after that the agent spends autonomously within bounds.
+Every action goes through the AgentRailProtocol API with your `x-api-key`. Spends are bounded by a policy (a per-payment cap, a rolling cap, and/or an allowlist) and released from your vault via a proof-gated on-chain path. The API key grants no signing authority over funds: it can only spend within the limits you set. Fund the vault and authorize Autopay once in the dApp; after that the agent spends autonomously within bounds.
 
 ## Installation
 
@@ -19,8 +19,8 @@ npm run build
 Only two variables are needed:
 
 ```bash
-CLEVERCON_API_URL=http://localhost:4100
-CLEVERCON_API_KEY=cc_yourprefix.yoursecret   # create one in the dApp Developer console
+AGENTRAIL_PROTOCOL_API_URL=http://localhost:4100
+AGENTRAIL_PROTOCOL_API_KEY=cc_yourprefix.yoursecret   # create one in the dApp Developer console
 ```
 
 ## Claude Desktop / Cursor configuration
@@ -28,12 +28,12 @@ CLEVERCON_API_KEY=cc_yourprefix.yoursecret   # create one in the dApp Developer 
 ```json
 {
   "mcpServers": {
-    "clevercon": {
+    "agentrail-protocol": {
       "command": "npx",
-      "args": ["-y", "@clevercon/mcp"],
+      "args": ["-y", "@agentrail-protocol/mcp"],
       "env": {
-        "CLEVERCON_API_URL": "http://localhost:4100",
-        "CLEVERCON_API_KEY": "cc_yourprefix.yoursecret"
+        "AGENTRAIL_PROTOCOL_API_URL": "http://localhost:4100",
+        "AGENTRAIL_PROTOCOL_API_KEY": "cc_yourprefix.yoursecret"
       }
     }
   }
@@ -76,4 +76,4 @@ npm test      # smoke test (MCP handshake + tools/list)
 - **Bounded**: every spend is checked against a policy; the vault caps the total on-chain.
 - **Metered**: API-key usage is metered and can carry a daily quota.
 
-See the main [CleverCon README](../../README.md) for the full architecture.
+See the main [AgentRailProtocol README](../../README.md) for the full architecture.

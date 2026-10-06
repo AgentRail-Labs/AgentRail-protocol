@@ -167,7 +167,7 @@ export class VaultContractService {
   async buildRegisterOrchestratorXdr(
     userAddress: string,
     orchestrator: string,
-    name = 'clevercon',
+    name = 'agentrail-protocol',
   ): Promise<string> {
     this.ensureActive();
     return this.buildUnsignedXdr(userAddress, 'register_orchestrator', [

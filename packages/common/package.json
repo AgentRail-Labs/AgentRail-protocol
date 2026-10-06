@@ -1,5 +1,5 @@
 {
-  "name": "@clevercon/common",
+  "name": "@agentrail-protocol/common",
   "version": "1.0.0",
   "type": "module",
   "main": "./src/index.ts",

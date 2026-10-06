@@ -1,6 +1,6 @@
 import { Body, Controller, Get, Param, Post, Query, UseGuards } from '@nestjs/common';
 import { z } from 'zod';
-import { Role } from '@clevercon/db';
+import { Role } from '@agentrail-protocol/db';
 import { AdminService } from './admin.service.js';
 import { JwtAuthGuard } from '../auth/jwt-auth.guard.js';
 import { RolesGuard } from '../auth/roles.guard.js';

@@ -1,5 +1,5 @@
 /**
- * CleverCon headless testnet E2E harness (T0 of TESTNET-COMPLETION-PLAN).
+ * AgentRailProtocol headless testnet E2E harness (T0 of TESTNET-COMPLETION-PLAN).
  *
  * Drives the full money loop on Stellar testnet with a FRESH throwaway keypair
  * and NO browser: friendbot fund -> USDC trustline -> faucet USDC -> SEP-10
@@ -30,8 +30,8 @@ import http from 'node:http';
 import { createHmac } from 'node:crypto';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { createSpender } from '@clevercon/agent-sdk/spender';
-import { createAgentWallet } from '@clevercon/agent-sdk';
+import { createSpender } from '@agentrail-protocol/agent-sdk/spender';
+import { createAgentWallet } from '@agentrail-protocol/agent-sdk';
 import { Client } from '@modelcontextprotocol/sdk/client/index.js';
 import { StdioClientTransport } from '@modelcontextprotocol/sdk/client/stdio.js';
 import express from 'express';
@@ -172,7 +172,7 @@ async function stepUp(kp: Keypair): Promise<string> {
 
 // ── Main ────────────────────────────────────────────────────────────────────
 async function main() {
-  console.log(`\nCleverCon testnet E2E  (api=${API_URL}, deposit=${DEPOSIT} USDC)\n`);
+  console.log(`\nAgentRailProtocol testnet E2E  (api=${API_URL}, deposit=${DEPOSIT} USDC)\n`);
   const buyer = Keypair.random();
   console.log(`buyer: ${buyer.publicKey()}`);
   console.log(`buyer secret (throwaway): ${buyer.secret()}\n`);
@@ -458,8 +458,8 @@ function startWebhookSink(): { url: string; received: HookHit[]; close: () => vo
     req.on('data', (c) => (data += c));
     req.on('end', () => {
       received.push({
-        event: String(req.headers['x-clevercon-event'] ?? ''),
-        signature: String(req.headers['x-clevercon-signature'] ?? ''),
+        event: String(req.headers['x-agentrail-protocol-event'] ?? ''),
+        signature: String(req.headers['x-agentrail-protocol-signature'] ?? ''),
         rawBody: data,
         body: (() => {
           try {
@@ -573,7 +573,7 @@ async function runReachStage(token: string, policyId: string, buyer: Keypair) {
   const transport = new StdioClientTransport({
     command: 'npx',
     args: ['tsx', path.join(__dirname, '..', 'packages', 'mcp', 'src', 'server.ts')],
-    env: { ...process.env, CLEVERCON_API_URL: API_URL, CLEVERCON_API_KEY: apiKey } as Record<
+    env: { ...process.env, AGENTRAIL_PROTOCOL_API_URL: API_URL, AGENTRAIL_PROTOCOL_API_KEY: apiKey } as Record<
       string,
       string
     >,

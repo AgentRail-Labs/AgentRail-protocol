@@ -1,4 +1,4 @@
-# @clevercon/indexer (services/indexer)
+# @agentrail-protocol/indexer (services/indexer)
 
 Soroban event indexer. Polls the configured contracts (CleverVault, policy-verifier,
 registry) via Soroban RPC, normalizes each event, and writes it to `chain_events`
@@ -19,8 +19,8 @@ the exact vault event schema.
 npm run db:up && npm run db:push
 INDEXER_CONTRACT_IDS=CC4QX7ZVME7PO25GELU5VIM6BOSU7UBNJF56D46VMGBWQBBFQVIXYRZO \
 INDEXER_START_LEDGER=<recent-ledger> \
-DATABASE_URL=postgresql://clevercon:clevercon@localhost:5432/clevercon \
-npm start -w @clevercon/indexer
+DATABASE_URL=postgresql://agentrail-protocol:agentrail-protocol@localhost:5432/agentrail-protocol \
+npm start -w @agentrail-protocol/indexer
 ```
 
 ## Test

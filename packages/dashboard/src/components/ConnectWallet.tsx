@@ -112,7 +112,7 @@ export function ConnectWallet() {
           <Layers size={20} className="text-white" />
         </div>
         <div>
-          <h1 className="text-xl font-bold text-white leading-none">CleverCon</h1>
+          <h1 className="text-xl font-bold text-white leading-none">AgentRailProtocol</h1>
           <p className="text-xs text-gray-500 leading-none mt-1">AI Agent Marketplace · Stellar Testnet</p>
         </div>
       </div>
@@ -125,7 +125,7 @@ export function ConnectWallet() {
           </div>
           <h2 className="text-lg font-semibold text-white mb-1.5">Connect your wallet</h2>
           <p className="text-sm text-gray-400 leading-relaxed">
-            Choose a Stellar wallet to access CleverCon. Your funds stay in your control.
+            Choose a Stellar wallet to access AgentRailProtocol. Your funds stay in your control.
           </p>
         </div>
 

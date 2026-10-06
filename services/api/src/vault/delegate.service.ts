@@ -1,14 +1,14 @@
 import { Injectable, Logger, ServiceUnavailableException } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { Keypair } from '@stellar/stellar-sdk';
-import { encryptSecret, decryptSecret, secretCryptoAvailable } from '@clevercon/db';
+import { encryptSecret, decryptSecret, secretCryptoAvailable } from '@agentrail-protocol/db';
 import type { AppEnv } from '../config/env.validation.js';
 import { PrismaService } from '../prisma/prisma.service.js';
 
 /**
  * Provisions and manages each user's spending delegate (the orchestrator they
  * authorize on the vault). The secret is generated server-side, encrypted at
- * rest (AES-GCM via @clevercon/db), and only ever decrypted to sign the user's
+ * rest (AES-GCM via @agentrail-protocol/db), and only ever decrypted to sign the user's
  * own locks and releases. The delegate is bounded by the vault policy, so it can
  * never overspend; it holds only a little XLM for fees, never user funds.
  *
@@ -25,7 +25,7 @@ export class DelegateService {
     config: ConfigService<AppEnv, true>,
   ) {
     this.network = config.get('NETWORK', { infer: true });
-    // The shared @clevercon/db crypto util reads the key from process.env; the
+    // The shared @agentrail-protocol/db crypto util reads the key from process.env; the
     // API's validated config does not populate process.env, so bridge it here.
     const key = config.get('DELEGATE_ENCRYPTION_KEY', { infer: true });
     if (key && !process.env.DELEGATE_ENCRYPTION_KEY) process.env.DELEGATE_ENCRYPTION_KEY = key;

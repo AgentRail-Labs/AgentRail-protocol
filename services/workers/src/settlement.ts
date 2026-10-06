@@ -6,13 +6,13 @@ import {
   TaskStatus,
   decryptSecret,
   type PrismaClient,
-} from '@clevercon/db';
+} from '@agentrail-protocol/db';
 import {
   buildBindingProof,
   generateNullifier,
   createRedisMutex,
   type RedisMutex,
-} from '@clevercon/common';
+} from '@agentrail-protocol/common';
 import { logger } from './logger.js';
 import { delegateMutex, submitDelegateCall, type SorobanOpts } from './sequence.js';
 import { redisConnection } from './queue.js';

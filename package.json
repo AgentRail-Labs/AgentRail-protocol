@@ -1,5 +1,5 @@
 {
-  "name": "clevercon",
+  "name": "agentrail-protocol",
   "private": true,
   "workspaces": [
     "apps/*",

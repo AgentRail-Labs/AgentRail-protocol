@@ -1,4 +1,4 @@
-# `@clevercon/workers`
+# `@agentrail-protocol/workers`
 
 The BullMQ worker layer. Slow or at-risk work runs here off the request path with
 retries, backoff, and idempotency, so the API stays fast: **task execution**
@@ -42,7 +42,7 @@ PolicyVerifier before any funds move.
 
 ```bash
 # needs Redis (docker compose up -d redis) and DATABASE_URL/REDIS_URL in .env
-npm run -w @clevercon/workers start      # start the worker
+npm run -w @agentrail-protocol/workers start      # start the worker
 WORKER_CONCURRENCY=5                      # optional (default 5)
 ```
 

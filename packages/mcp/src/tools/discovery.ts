@@ -15,7 +15,7 @@ import {
 export const searchServicesSchema = {
   name: 'search_services',
   description:
-    'Browse the CleverCon directory of services an agent can hire and pay. Filter by text and category; sort by recent, rating, or price.',
+    'Browse the AgentRailProtocol directory of services an agent can hire and pay. Filter by text and category; sort by recent, rating, or price.',
   inputSchema: {
     type: 'object',
     properties: {

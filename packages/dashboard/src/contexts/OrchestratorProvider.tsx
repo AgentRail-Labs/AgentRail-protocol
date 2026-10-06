@@ -37,7 +37,7 @@ export function OrchestratorProvider({ children }: { children: ReactNode }) {
       // otherwise CreateOrchestrator registers one client-side (user-signed).
       setIsLoading(true);
       const fromStore = (): OrchestratorInfo | null => {
-        const stored = localStorage.getItem(`clevercon_orchestrator_${publicKey}`);
+        const stored = localStorage.getItem(`agentrail-protocol_orchestrator_${publicKey}`);
         if (!stored) return null;
         try {
           const r = JSON.parse(stored);
@@ -80,7 +80,7 @@ export function OrchestratorProvider({ children }: { children: ReactNode }) {
 
       if (!data.exists) {
         // Server lost the record (redeploy). Try to restore from localStorage.
-        const stored = localStorage.getItem(`clevercon_orchestrator_${publicKey}`);
+        const stored = localStorage.getItem(`agentrail-protocol_orchestrator_${publicKey}`);
         if (stored) {
           try {
             const record = JSON.parse(stored);

@@ -2,7 +2,7 @@
 
 ## Vision
 
-CleverCon lets you safely put an AI agent in charge of money on Stellar. You fund
+AgentRailProtocol lets you safely put an AI agent in charge of money on Stellar. You fund
 a non-custodial Soroban vault, set the limits it must obey (a budget, per-payment
 caps, an allowlist of payees, time windows), optionally keep those limits private,
 and your agent then decides how to spend and disburse funds within them. The vault
@@ -10,13 +10,13 @@ enforces the boundary on-chain, so neither the agent nor the platform can exceed
 it, and the platform never holds your funds.
 
 It is a spending-control layer, not a payment rail: Stellar moves the money;
-CleverCon governs how an agent may spend it, privately. Three things define it:
+AgentRailProtocol governs how an agent may spend it, privately. Three things define it:
 
 - **Delegated decisions, hard limits.** The agent has autonomy over who, when, and
   how much within the allowed set; the contract guarantees it can never spend
   outside your rules or pay an unapproved party.
 - **Privacy, the differentiator.** The rules are enforced on-chain but kept
-  private, which is what separates CleverCon from transparent, custodial, or
+  private, which is what separates AgentRailProtocol from transparent, custodial, or
   escrow alternatives.
 - **One primitive, many uses.** Hiring services is one application. The same
   bounded, private payments cover autonomous disbursements and payouts, recurring
@@ -47,9 +47,9 @@ Live on Stellar testnet today:
   exactly-once settlement, with Socket.IO real-time over a Redis adapter.
 - **Web app**: fund a vault, set private spending limits, hire services, request a
   compliance proof, and watch releases settle.
-- **SDK** (`@clevercon/agent-sdk`): `createSpender` (a bounded spending account),
+- **SDK** (`@agentrail-protocol/agent-sdk`): `createSpender` (a bounded spending account),
   `createAgentWallet` (x402 agent-key mode), and `createProvider`/`createAgent` (be
-  a paid service), plus a **Stellar MCP server** (`@clevercon/mcp`, 12 tools).
+  a paid service), plus a **Stellar MCP server** (`@agentrail-protocol/mcp`, 12 tools).
 - **Programmable payments**: pay any allowlisted address or disburse to many in one
   bounded, private, proof-gated instruction, plus a natural-language chat agent (you
   approve; the vault enforces). Not tied to the hire flow.
@@ -88,5 +88,5 @@ Toward mainnet:
 Longer term: confidential amounts and counterparties (pending Stellar confidential
 tokens), deeper ecosystem integrations, and on-chain dispute resolution.
 
-See the [issue tracker](https://github.com/clevercon-protocol/clevercon/issues)
+See the [issue tracker](https://github.com/agentrail-protocol-protocol/agentrail-protocol/issues)
 and [CONTRIBUTING.md](CONTRIBUTING.md) to get started.

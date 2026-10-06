@@ -40,8 +40,8 @@ interface WalletContextValue {
 
 const WalletContext = createContext<WalletContextValue | null>(null);
 
-const LS_PUBKEY    = 'clevercon_pubkey';
-const LS_WALLET_ID = 'clevercon_wallet_id';
+const LS_PUBKEY    = 'agentrail-protocol_pubkey';
+const LS_WALLET_ID = 'agentrail-protocol_wallet_id';
 
 const NETWORK = WalletNetwork.TESTNET;
 

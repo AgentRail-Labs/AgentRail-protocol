@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
 /**
- * CleverCon MCP Server
+ * AgentRailProtocol MCP Server
  *
  * Gives an AI agent a bounded, non-custodial Stellar spending account on
- * CleverCon: discover services, pay/disburse/hire within a policy, set spending
+ * AgentRailProtocol: discover services, pay/disburse/hire within a policy, set spending
  * limits, and read budget + activity. Every action is driven with a scoped API
  * key and bounded on-chain by the vault, so the agent can spend but never
  * overspend or pay outside the rules, and never holds funds.
@@ -49,19 +49,19 @@ import type { ApiConfig } from './api-client.js';
 
 function getConfig(): ApiConfig {
   return {
-    api_url: process.env.CLEVERCON_API_URL || 'http://localhost:4100',
-    api_key: process.env.CLEVERCON_API_KEY,
+    api_url: process.env.AGENTRAIL_PROTOCOL_API_URL || 'http://localhost:4100',
+    api_key: process.env.AGENTRAIL_PROTOCOL_API_KEY,
   };
 }
 
-class CleverConMCPServer {
+class AgentRailProtocolMCPServer {
   private server: Server;
   private config: ApiConfig;
 
   constructor() {
     this.config = getConfig();
     this.server = new Server(
-      { name: 'clevercon-mcp-server', version: '2.0.0' },
+      { name: 'agentrail-protocol-mcp-server', version: '2.0.0' },
       { capabilities: { tools: {} } },
     );
     this.setupHandlers();
@@ -133,16 +133,16 @@ class CleverConMCPServer {
   async run() {
     const transport = new StdioServerTransport();
     await this.server.connect(transport);
-    console.error('CleverCon MCP Server running on stdio');
+    console.error('AgentRailProtocol MCP Server running on stdio');
   }
 }
 
 if (import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
-  const server = new CleverConMCPServer();
+  const server = new AgentRailProtocolMCPServer();
   server.run().catch((error) => {
     console.error('Failed to start server:', error);
     process.exit(1);
   });
 }
 
-export { CleverConMCPServer };
+export { AgentRailProtocolMCPServer };

@@ -5,7 +5,7 @@ import {
   UnauthorizedException,
 } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
-import type { Role } from '@clevercon/db';
+import type { Role } from '@agentrail-protocol/db';
 import type { HttpRequest } from './types.js';
 
 interface AccessTokenPayload {

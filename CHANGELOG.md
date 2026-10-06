@@ -55,7 +55,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ### Added
 
-- `@clevercon/agent-sdk` (`packages/agent-sdk`): shared scaffolding for
+- `@agentrail-protocol/agent-sdk` (`packages/agent-sdk`): shared scaffolding for
   specialist agents — `createAgent` wires the manifest, health, and paid task
   endpoints; x402 and MPP payment middleware factories (`withX402`, `withMpp`);
   self-registration with retry/backoff and heartbeat; graceful deregistration on
@@ -113,5 +113,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
   status surfacing in the UI, and propagation of failed-step context to
   downstream agents (so reports don't hallucinate missing data).
 
-[Unreleased]: https://github.com/clevercon-protocol/clevercon/compare/v0.1.0...HEAD
-[0.1.0]: https://github.com/clevercon-protocol/clevercon/releases/tag/v0.1.0
+[Unreleased]: https://github.com/agentrail-protocol-protocol/agentrail-protocol/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/agentrail-protocol-protocol/agentrail-protocol/releases/tag/v0.1.0

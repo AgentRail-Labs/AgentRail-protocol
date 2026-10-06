@@ -40,7 +40,7 @@ export function CreateOrchestrator() {
         const signed = await signTransaction(xdr, 'Test SDF Network ; September 2015');
         await submitVaultXdr(signed);
         localStorage.setItem(
-          `clevercon_orchestrator_${publicKey}`,
+          `agentrail-protocol_orchestrator_${publicKey}`,
           JSON.stringify({
             user_address: publicKey,
             orchestrator_pubkey: kp.publicKey(),
@@ -100,7 +100,7 @@ export function CreateOrchestrator() {
 
       // Persist the orchestrator record locally so we can restore it after server restarts/redeploys
       localStorage.setItem(
-        `clevercon_orchestrator_${publicKey}`,
+        `agentrail-protocol_orchestrator_${publicKey}`,
         JSON.stringify({
           user_address: publicKey,
           orchestrator_pubkey,
@@ -167,7 +167,7 @@ export function CreateOrchestrator() {
           <Layers size={20} className="text-white" />
         </div>
         <div>
-          <h1 className="text-xl font-bold text-white leading-none">CleverCon</h1>
+          <h1 className="text-xl font-bold text-white leading-none">AgentRailProtocol</h1>
           <p className="text-xs text-gray-500 leading-none mt-1">AI Agent Marketplace · Stellar Testnet</p>
         </div>
       </div>

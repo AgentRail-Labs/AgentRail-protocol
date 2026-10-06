@@ -1,6 +1,6 @@
 # Operations and disaster recovery
 
-How CleverCon is operated, backed up, and recovered. This is a living runbook; it marks what is in place today versus what is recommended before a mainnet deployment.
+How AgentRailProtocol is operated, backed up, and recovered. This is a living runbook; it marks what is in place today versus what is recommended before a mainnet deployment.
 
 ## The one invariant that bounds every incident
 

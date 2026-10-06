@@ -311,7 +311,7 @@ function Dashboard() {
             <div className="w-6 h-6 bg-gradient-to-br from-purple-600 to-purple-800 rounded-md flex items-center justify-center">
               <Layers size={11} className="text-white" />
             </div>
-            <span className="text-sm font-bold text-white">CleverCon</span>
+            <span className="text-sm font-bold text-white">AgentRailProtocol</span>
           </div>
 
           {/* Status */}
@@ -408,7 +408,7 @@ function Dashboard() {
                 <TaskInput
                   onSubmit={handleSubmit}
                   isRunning={isRunning}
-                  orchestratorName={orchestrator?.name ?? 'CleverCon'}
+                  orchestratorName={orchestrator?.name ?? 'AgentRailProtocol'}
                   onFundVault={() => setOpenFundVault(true)}
                   onBotClick={() => setShowBotModal(true)}
                 />
@@ -497,7 +497,7 @@ function Dashboard() {
         <QueueReviewModal
           items={taskQueue.filter(i => i.status === 'queued')}
           vaultAvailable={vaultBalance}
-          orchestratorName={orchestrator?.name ?? 'CleverCon'}
+          orchestratorName={orchestrator?.name ?? 'AgentRailProtocol'}
           onFundVault={() => { setShowQueueReview(false); setOpenFundVault(true); }}
           onConfirm={handleQueueConfirm}
           onClose={() => setShowQueueReview(false)}

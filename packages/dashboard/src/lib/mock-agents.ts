@@ -2,7 +2,7 @@
  * Sample marketplace services, shown only when there is no live registry
  * backend connected. These are DEMO DATA, not real registered services: every
  * entry is marked `is_mock` and `inactive`. They illustrate the range of
- * services that can register on CleverCon: automated AI agents, human
+ * services that can register on AgentRailProtocol: automated AI agents, human
  * specialists, and business services, across many categories.
  */
 
@@ -125,7 +125,7 @@ function build(s: Seed) {
     description: s.description,
     capabilities: s.capabilities,
     pricing: { model: s.model, price_per_call: s.price, currency: 'USDC' as const },
-    endpoint: `https://demo.clevercon.app/${s.id}`,
+    endpoint: `https://demo.agentRailProtocol.app/${s.id}`,
     stellar_address: PLACEHOLDER_ADDR,
     status: 'inactive' as const,
     is_mock: true,
