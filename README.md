@@ -4,8 +4,6 @@
 
 **The non-custodial spending-control layer for AI agents on Stellar.**
 
-[![CI](https://github.com/AgentRail-Labs/AgentRail-protocol/actions/workflows/ci.yml/badge.svg)](https://github.com/AgentRail-Labs/AgentRail-protocol/actions/workflows/ci.yml)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 </div>
 
